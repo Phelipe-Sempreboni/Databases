@@ -31,3 +31,7 @@ Como sempre busco na web informações sobre SQL Server quando preciso continuar
 ---
 
 Espero ajudar :smiley:
+
+---
+
+![Quadrado e 100 pixels](https://user-images.githubusercontent.com/57469401/97373077-d6ec4680-1893-11eb-87d6-40eeb81ee72a.png)
