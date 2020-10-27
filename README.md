@@ -24,9 +24,9 @@ Como sempre busco na web informações sobre SQL Server quando preciso continuar
 
 ---
 
-[Acessa lá meu GitHub :grin:](https://github.com/Phelipe-Sempreboni)
+[Acesse meu GitHub :cat:](https://github.com/Phelipe-Sempreboni)
 
-[Acessa lá meu LinkedIn :grin:](https://www.linkedin.com/in/luiz-phelipe-utiama-sempreboni-319902169/)
+[Acesse meu LinkedIn :computer:](https://www.linkedin.com/in/luiz-phelipe-utiama-sempreboni-319902169/)
 
 ---
 
