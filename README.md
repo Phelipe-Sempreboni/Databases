@@ -8,6 +8,8 @@
 
 Como sempre busco na web informações sobre SQL Server quando preciso continuar um projeto ou assunto que desconheço, na própria documentação ou no Stack Overflow, criei esse repositório visando tentar ajudar (quem chegar até aqui) com informações de SQL Server, com querys, consultas, tipos e/ou divisões __(DQL, DML, DDL, DCL, DTL)__ e até onde for possível ajudar e de acordo com avanço dos meus conhecimentos, estudos, trabalho e tudo que puder agregar para a comunidade.
 
+Haverá também uma pasta com algumas informações de MySQL, pois, as linguagens são bem parecidas.
+
 ---
 
 #### Abaixo os tipos e/ou divisões e significados das siglas para quem não souber e são importantes dentro da ferramenta SQL Server.
