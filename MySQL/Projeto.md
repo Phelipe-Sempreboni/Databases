@@ -2,7 +2,7 @@
 
 ---
 
-### Abaixo um pequeno projeto em MySQL, onde é possível verificar e analisar alguns comandos do MySQL.
+### Abaixo um pequeno projeto em MySQL, onde é possível analisar e/ou verificar e executar alguns comandos do MySQL.
 
 ---
 
@@ -24,7 +24,17 @@ Base dos principais comandos utilizados neste projeto:
 
 Este projeto tem o seguinte cenário, do questionamento abaixo:
 
-_Observação: A pártir deste ponto, é possível copiar os comentários e códigos inteiros e inseri-los direto no MySQL e executado, onde todos os comandos seguirão normalmente._
+_Observação: A pártir deste ponto, é possível copiar os comentários e códigos inteiros e inseri-los direto no MySQL e executado, onde todos os comandos seguirão normalmente. Todos os comandos e demais informações estão comentadas neste projeto._
+
+---
+
+-- Início dos scripts:
+
+/*
+Responsável: Projetista/Analista de Dados;
+Empresa contratante: RH_SOLUTIONS;
+Tipo do trabalho: Construção de modelo relacional;
+*/
 
 
 
