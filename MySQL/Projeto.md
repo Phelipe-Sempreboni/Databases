@@ -26,17 +26,7 @@ _Observação: A pártir deste ponto, é possível copiar os comentários e cód
 
 ---
 
+```
+
 -- Este projeto tem o seguinte cenário, do questionamento abaixo:
-
--- Início dos scripts:
-
-/*
-Responsável: Projetista/Analista de Dados;
-Empresa contratante: RH_SOLUTIONS;
-Tipo do trabalho: Construção de modelo relacional;
-*/
-
-/*
-
----------------X---------------X---------------X---------------X---------------X---------------X---------------X---------------X---------------
 
