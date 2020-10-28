@@ -2,7 +2,7 @@
 
 ---
 
-#### Repositório para informações e apoio sobre SQL Server e um pouco de MySQL.
+#### Repositório para informações e apoio sobre SQL Server e algumas informações de MySQL.
 
 ---
 
