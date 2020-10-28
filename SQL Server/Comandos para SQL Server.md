@@ -16,7 +16,7 @@ Também haverão repositórios de Python e R posteriormente, pois, meu foco é a
 
 ```
 
--- Os comentários e comando abaixo podem ser copiados e inseridos direto no SQL Server para análises, estudos, testes, etc.
+-- Os comentários e comandos abaixo podem ser copiados e inseridos direto no SQL Server para análises, estudos, testes, etc.
 
 -- Elaborado por: Luiz Phelipe Utiama Sempreboni.
 -- Sempre que possível haverão atualizações e aumento dos comandos para análises, estudos, testes, etc.
