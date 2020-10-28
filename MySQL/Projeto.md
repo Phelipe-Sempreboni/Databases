@@ -1,0 +1,1 @@
+# Abaixo um pequeno projeto em MySQL, onde é possível verificar e analisar alguns comandos do MySQL.
