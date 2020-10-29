@@ -1,23 +1,4 @@
-# Comandos para SQL Server
-
----
-
-### Abaixo alguns comandos de SQL Server que podem ajudar a compreender um pouco da ferramenta com seus comandos e ajudar no dia a dia das pessoas que lidam com essa ferramenta.
-
----
-
-Criei esse repositório para dividir um pouco do conhecimento que tenho sobre SQL Server, onde foram adquiridos no trabalho, estudos pela Web, cursos, etc. Sempre percebi muitos falando de ferramenras para programação, porém, não ando vendo muito sobre banco de dados, então resolvi criar esse repositório com intuito de aumentar os meus conhecimentos, treinar e dividir com as pessoas, pois, muitas vezes a programação se utiliza de banco de dados para suas aplicações.
-
-Sempre que puder irei aumentar os comandos (querys) desse repositório, tanto em (DQL, DML, DDL, DCL, DTL). Os significados das siglas constam no arquivo (README.md).
-
-Também haverão repositórios de Python e R posteriormente, pois, meu foco é a Ciência de Dados, e essas ferramentas em conjunto (SQL Server ou banco de dados, Python e R) são de extrema importância para essa área.
-
----
-
-```
-
--- Á partir deste ponto os comentários e comandos abaixo podem ser copiados e inseridos direto no SQL Server para análises, estudos, testes, etc.
--- Nota: Temos temos esse arquivo na pasta em formato (.sql)
+-- Comandos na extensão em (.sql).
 
 -- Elaborado por: Luiz Phelipe Utiama Sempreboni.
 -- Sempre que possível haverão atualizações e aumento dos comandos para análises, estudos, testes, etc.
@@ -173,7 +154,3 @@ SELECT * FROM [DB_Projetos].[filmes].[movies]
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
 -- Haverá continuação em breve de mais comandos do SQL Server... : )
-
-```
-
-#### Aguarde que haverão novos comandos inseridos em breve :collision:
