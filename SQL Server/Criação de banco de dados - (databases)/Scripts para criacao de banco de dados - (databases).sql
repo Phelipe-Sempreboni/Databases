@@ -9,16 +9,21 @@
 -- Maneira 1 - Mais simples de criar o banco de dados.
 -- Nota: Quando usamos esse comando mais simples, o SQL Server se baseia no banco de dados padrão do sistema para definir os parâmetros.
 -- Nota2: Os arquivos serão criados de acordo com a pasta que foi definida em sistema para o SQL Server Management Studio.
+-- Nota3: O quê estiver escrito em branco é onde você pode alterar para o nome que desejar.
 
 USE master;
 CREATE DATABASE TESTE;
+GO
 
 USE master;
 DROP DATABASE TESTE;
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
 -- Maneira 2 - Criação de um database com arquivos de dados, ou seja, parâmetro.
+-- Nota: O quê estiver escrito em branco é onde você pode alterar para o nome que desejar.
+-- Nota2: Os tamanhos em (SIZE, MAXSIZE e FILEGROWTH) podem ser alterados de acordo com seus critérios e necessidades no momento da criação do database.
 
 USE master;
 DROP DATABASE TESTE;
@@ -38,6 +43,8 @@ GO
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
 -- Maneira 3 - Criação de um database com arquivos de dados e de logs, ou seja, parâmetros.
+-- Nota: O quê estiver escrito em branco é onde você pode alterar para o nome que desejar, mas neste caso, não altere os campos de (SIZE, MAXSIZE e FILEGROWTH).
+-- Nota2: Os tamanhos em (SIZE, MAXSIZE e FILEGROWTH) podem ser alterados de acordo com seus critérios e necessidades no momento da criação do database.
 
 USE master;
 DROP DATABASE TESTE;
@@ -65,6 +72,8 @@ GO
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
 -- Maneira 4 - Criação de um database com diversos arquivos de dados.
+-- Nota: O quê estiver escrito em branco é onde você pode alterar para o nome que desejar, mas neste caso, não altere os campos de (SIZE, MAXSIZE e FILEGROWTH).
+-- Nota2: Os tamanhos em (SIZE, MAXSIZE e FILEGROWTH) podem ser alterados de acordo com seus critérios e necessidades no momento da criação do database.
 
 USE master;
 DROP DATABASE TESTE;
@@ -103,6 +112,8 @@ GO
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
 -- Maneira 5 - Criação de um database com diversos arquivos de dados e de logs.
+-- Nota: O quê estiver escrito em branco é onde você pode alterar para o nome que desejar, mas neste caso, não altere os campos de (SIZE, MAXSIZE e FILEGROWTH).
+-- Nota2: Os tamanhos em (SIZE, MAXSIZE e FILEGROWTH) podem ser alterados de acordo com seus critérios e necessidades no momento da criação do database.
 
 USE master;
 DROP DATABASE TESTE;

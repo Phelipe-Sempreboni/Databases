@@ -1,4 +1,8 @@
--- Comandos na extensão em (.sql).
+-- Comandos para SQL Server Management Studio na extensão em (.sql).
+
+-- Abaixo alguns comandos de SQL Server que podem ajudar a compreender um pouco da ferramenta com seus comandos e ajudar no dia a dia das pessoas que lidam com essa ferramenta.
+
+-- Criei esse mini projeto para dividir um pouco do conhecimento que tenho sobre SQL Server, onde foram adquiridos no trabalho, estudos pela Web, cursos, etc. Sempre percebi muitos falando de ferramenras para programação, porém, não ando vendo muito sobre banco de dados, então resolvi criar esse repositório com intuito de aumentar os meus conhecimentos, treinar e dividir com as pessoas, pois, muitas vezes a programação se utiliza de banco de dados para suas aplicações.
 
 -- Elaborado por: Luiz Phelipe Utiama Sempreboni.
 -- Sempre que possível haverão atualizações e aumento dos comandos para análises, estudos, testes, etc.
@@ -9,15 +13,18 @@
 -- Nota: Temos mais maneiras de criar um banco de dados, tanto pelo assistente ou comandos com "CREATE DATABASE" com mais clausulas, porém, irei focar somente no mais simples neste momento.
 
 CREATE DATABASE DB_Projetos;
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 -- Criação do schema "agrupammento" que ficará e/ou ficarão as tabelas.
 -- Criação do schema de forma padrão somente com "CREATE SCHEMA".
 -- Nota: Não esqueça de executar os comandos abaixo, principalmente o "USE DB_Projetos", que server para selecionar o banco de dados que os esquemas serão criados.
--- Nota: Executar uma linha por vez dos 4 códigos abaixo, pois, caso não seja feito dessa maneira, ocorrerá erro.
 
 USE DB_Projetos;
+GO
+
 CREATE SCHEMA filmes;
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
@@ -26,10 +33,16 @@ CREATE SCHEMA filmes;
 -- Nota: Se for excluído primeira o banco de dados não será necessário executar os comandos para exclusão dos schemas.
 
 USE DB_Projetos;
+GO
+
 DROP SCHEMA filmes;
+GO
 
 USE master;
+GO
+
 DROP DATABASE DB_Projetos;
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
@@ -54,6 +67,7 @@ GO
 
 -- Script 2
 DROP TABLE filmes.movies;
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
@@ -82,15 +96,19 @@ INSERT INTO filmes.movies (nome_filme, produtora_filme, nota_filme)
 			,('Truque de Mestre', 'Studio Williams EUA', 8.5)
 			,('O Estagiário', 'Texas Studio', 10)
 			,('Zerando a Vida', 'Universal', 3.5)
+GO
 
 -- Script 2
 SELECT * FROM DB_Projetos.filmes.movies;
+GO
 
 -- Script 3
 DELETE FROM DB_Projetos.filmes.movies;
+GO
 
 -- Script 4
 DROP TABLE DB_Projetos.filmes.movies;
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
@@ -109,14 +127,19 @@ USE DB_Projetos;
 UPDATE DB_Projetos.filmes.movies
 	SET nome_filme = 'Alterei o nome do filme do id (1)'
 	WHERE nome_filme = 'Homem-Aranha'
+GO
 
 -- Script 2
+USE DB_Projetos;
+
 UPDATE DB_Projetos.filmes.movies
 	SET nome_filme = 'Homem-Aranha'
 	WHERE nome_filme = 'Alterei o nome do filme do id (1)'
+GO
 
 -- Script 3
 SELECT * FROM [DB_Projetos].[filmes].[movies]
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
@@ -136,6 +159,7 @@ SELECT
 	,[nota_filme]
 
 FROM [DB_Projetos].[filmes].[movies]
+GO
 
 -- Script 2
 SELECT
@@ -145,12 +169,12 @@ SELECT
 	,[nota_filme]
 
 FROM [DB_Projetos].[filmes].[movies]
-
 WHERE [id] = 4
+GO
+
 
 -- Script 3:
 SELECT * FROM [DB_Projetos].[filmes].[movies]
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
-
--- Haverá continuação em breve de mais comandos do SQL Server... : )

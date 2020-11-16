@@ -6,6 +6,7 @@ FROM sys.databases AS A
 INNER JOIN sys.master_files
 ON A.database_id = sys.master_files.database_id
 GROUP BY A.name
+GO
 
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 -- Maneira 2 - Comando para saber o tamanho de um banco de dados especifico do sistema.
@@ -31,12 +32,14 @@ SELECT
     (SELECT sum(size) FROM tamanho_em_mb WHERE type = 0 AND tamanho_em_mb.database_id = databas.database_id) DataFileTamanho_MB,
     (SELECT sum(size) FROM tamanho_em_mb WHERE type = 1 AND tamanho_em_mb.database_id = databas.database_id) LogFileTamanho_MB
 FROM sys.databases AS databas
+GO
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
 -- Maneira 4 - Comando por stored procedure com algumas informações sobre tamanho do banco de dados.
 
 Use SUCOS_VENDAS;
 Exec SP_SpaceUsed;
+GO
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
 -- Maneira 5 - Comando para saber o tamanho de um banco de dados especifico do sistema.
@@ -96,16 +99,23 @@ SET
     END)
 FROM 
     #Datafile_Size A
+GO
  
 SELECT * 
 FROM #Datafile_Size
+GO
 -------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x-------x
 
 -- Maneira 6 - Comando para saber o tamanho de um banco de dados especifico do sistema.
--- Nota: Neste caso, será necessário executar comando abaixo a partir da linha 7 e depois executar o comando da linha 4.
--- Nota2: Créditos ao criador da stored procedure: Thiago R. Cruz - Guiadba.com.br
+-- Nota: Neste caso, você terá que criar a (STORED PROCEDURE) abaixo, a partir do comando (CREATE PROC) para conseguir executar corretamente o comando pelo (EXEC ou EXECUTE).
+-- Nota2: Se quiser dropar (excluir) a PROCEDURE do seu database, execute o comando que inicia com (DROP PROCEDURE).
+-- Nota3: Créditos ao criador da stored procedure: Thiago R. Cruz - Guiadba.com.br
 
 EXEC spt_database_size 'SUCOS_VENDAS'; -- Alterar para o nome desejado do banco de dados.
+GO
+
+DROP PROCEDURE spt_database_size;
+GO
 
 CREATE PROC spt_database_size @DATABASE_NAME SYSNAME = NULL, @TABLE SYSNAME = NULL
 AS
@@ -327,3 +337,4 @@ SELECT *
 FROM @FILE_SIZE2
 END
 END
+GO
