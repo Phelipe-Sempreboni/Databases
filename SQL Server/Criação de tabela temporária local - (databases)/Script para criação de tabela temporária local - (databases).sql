@@ -1,13 +1,13 @@
--- Exemplo de criação de tabela temporária local. Aqui não falaremos da tabela temporária global.
+-- Exemplo de criação de tabela temporária local.
 -- Nota: No item (I) temos o comando de (CREATE TABLE) para criação da tabela temporária.
 -- Nota2: No item (II) temos o comando de (INSERT INTO) e alguns dados para inserir nessa tabela e testa-la com os dados. Feito com dados ficticios.
 -- Nota3: No item (III) temos um comando (SELECT) para verificar a tabela e seus dados inseridos no item (II).
 -- Nota4: No item (IV) temos um comando de (DROP TABLE) caso queira dropar a tabela em algum momento e refazer os testes.
 
 -- Explicação sobre tabela temporária local:
--- Uma tabela temporária local existe apenas para a duração de uma conexão ou, se definida dentro de uma instrução composta, para a duração da instrução composta.
--- As tabelas temporárias locais estão disponíveis apenas para a sessão ou conexão do SQL Server (significa usuário único) que criou as tabelas. Eles são excluídos automaticamente quando a sessão que criou as tabelas foi fechada. 
--- As tabelas temporárias tem como símbolo para diferencia-la de uma tabela convencional o (#), conforme abaixo.
+-- As tabelas temporárias locais são visíveis apenas para seus criadores durante a mesma conexão com uma instância do SQL Server como quando as tabelas foram criadas ou referenciadas pela primeira vez. 
+-- As tabelas temporárias locais são excluídas depois que o usuário se desconecta da instância do SQL Server.
+-- As tabelas temporárias locais tem como símbolo para diferencia-la na criação de uma tabela convencional o (#), conforme o exemplo do item (I).
 -- O escopo da tabela temporária local existe para a sessão atual do usuário atual para a janela de consulta atual. Se você fechar a janela de consulta atual ou abrir uma nova janela de consulta e tentar encontrar a tabela temporária, isso fornecerá o erro.
 
 -- Resumindo, a criação da tabela temporária existe no momento atual da consulta e conexão, caso crie outra janela de consulta ou encerre sua conexão, você não conseguirá localizar essa tabela temporária. Será necessário refazer o processo. 
