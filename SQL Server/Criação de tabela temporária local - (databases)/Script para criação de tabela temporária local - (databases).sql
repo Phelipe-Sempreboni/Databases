@@ -1,4 +1,4 @@
--- Exemplo de criação de tabela temporária local. Aqui não falaremos da tabela temporária global.
+-- Exemplo de criação de tabela temporária local.
 -- Nota: No item (I) temos o comando de (CREATE TABLE) para criação da tabela temporária.
 -- Nota2: No item (II) temos o comando de (INSERT INTO) e alguns dados para inserir nessa tabela e testa-la com os dados. Feito com dados ficticios.
 -- Nota3: No item (III) temos um comando (SELECT) para verificar a tabela e seus dados inseridos no item (II).
