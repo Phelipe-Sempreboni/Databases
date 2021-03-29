@@ -3,6 +3,7 @@
 -- Iremos utilizar como exemplo o script de criação de tabela juntamente do DROP, para termos noção do que está sendo apagado.
 
 -- Este script funcional está no exemplo da pasta (Criação de tabela).
+-- Primeiro exemplo:
 CREATE TABLE TBL_CADASTRO_CLIENTES (
      CPF VARCHAR (11)
     ,NOME_COMPLETO VARCHAR (150)
@@ -19,4 +20,22 @@ CREATE TABLE TBL_CADASTRO_CLIENTES (
 );
 
 -- Comando para exclusão da tabela que foi criada acima.
+-- Primeiro exemplo:
 DROP TABLE TBL_CADASTRO_CLIENTES;
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+
+-- Este script funcional está no exemplo da pasta (Criação de tabela).
+-- Segundo exemplo:
+CREATE TABLE TBL_PRODUTOS (
+     PRODUTO VARCHAR (11)
+    ,NOME VARCHAR (150)
+    ,EMBALAGEM VARCHAR (50)
+    ,TAMANHO VARCHAR (50)
+    ,SABOR VARCHAR (50)
+    ,PRECO_LISTA FLOAT
+);
+
+-- Comando para exclusão da tabela que foi criada acima.
+-- Segundo exemplo:
+DROP TABLE TBL_PRODUTOS;
