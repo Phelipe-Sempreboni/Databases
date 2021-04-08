@@ -29,3 +29,14 @@ CREATE TABLE TBL_PRODUTOS (
     ,SABOR VARCHAR (50)
     ,PRECO_LISTA FLOAT
 );
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+
+CREATE TABLE TBL_VENDEDORES (
+     MATRICULA VARCHAR (30)
+    ,NOME VARCHAR (150)
+    ,PERCENTUAL_COMISSAO NUMBER
+
+);
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
