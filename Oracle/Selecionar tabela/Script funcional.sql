@@ -40,3 +40,19 @@ CREATE TABLE TBL_PRODUTOS (
 -- Comando para seleção da tabela que foi criada acima.
 -- Segundo exemplo:
 SELECT * FROM TBL_PRODUTOS;
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+
+-- Este script funcional está no exemplo da pasta (Criação de tabela).
+-- Terceiro exemplo:
+CREATE TABLE TBL_VENDEDORES (
+     MATRICULA VARCHAR (30)
+    ,NOME VARCHAR (150)
+    ,PERCENTUAL_COMISSAO NUMBER
+);
+
+-- Comando para seleção da tabela que foi criada acima.
+-- Terceiro exemplo:
+SELECT * FROM TBL_VENDEDORES;
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
