@@ -32,6 +32,7 @@ CREATE TABLE TBL_PRODUTOS (
 
 ------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
 
+-- Terceiro exemplo:
 CREATE TABLE TBL_VENDEDORES (
      MATRICULA VARCHAR (30)
     ,NOME VARCHAR (150)
