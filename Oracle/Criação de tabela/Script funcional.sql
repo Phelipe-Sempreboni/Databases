@@ -41,3 +41,22 @@ CREATE TABLE TBL_VENDEDORES (
 );
 
 ------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+
+-- Quarto exemplo:
+-- Construção de uma tabela com: 
+-- Coluna com auto incremento automático, neste caso um tipo de dado (INT) inteiro.
+-- Chave primária.
+-- Constraint.
+
+CREATE TABLE PRODUTOS.ETL_SAP_ESTOQUE
+(
+     ID_ETL_SAP_ESTOQUE INT GENERATED ALWAYS AS IDENTITY MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CONSTRAINT PK_ETL_API_PEOPLES NOT NULL PRIMARY KEY
+    ,ID_ORIGIN_SAP_ESTOQUE VARCHAR(50)
+    ,DES_MATERIAL_NAME VARCHAR (100)
+    ,DES_DESCRIPTION_MATERIAL VARCHAR (100)
+    ,NAM_OWNER VARCHAR (100)
+
+);
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+

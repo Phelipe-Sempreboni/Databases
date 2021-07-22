@@ -1,3 +1,5 @@
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+
 -- Este script funcional está no exemplo da pasta (Criação de tabela).
 -- Primeiro exemplo:
 CREATE TABLE TBL_CADASTRO_CLIENTES (
@@ -57,7 +59,7 @@ INSERT INTO TBL_CADASTRO_CLIENTES (CPF, NOME_COMPLETO, RUA, BAIRRO, CIDADE, ESTA
 INSERT INTO TBL_CADASTRO_CLIENTES (CPF, NOME_COMPLETO, RUA, BAIRRO, CIDADE, ESTADO, CEP, IDADE,	SEXO, LIMITE_CREDITO_COMPRA, VOLUME_MINIMO_COMPRA, PRIMEIRA_COMPRA) VALUES ('94832912863','Pavel Sobreira Pereira','Rua Cassao','Vila Menck','Amazonas','AM','5884040','68','M','46354','4635,4','0');
 INSERT INTO TBL_CADASTRO_CLIENTES (CPF, NOME_COMPLETO, RUA, BAIRRO, CIDADE, ESTADO, CEP, IDADE,	SEXO, LIMITE_CREDITO_COMPRA, VOLUME_MINIMO_COMPRA, PRIMEIRA_COMPRA) VALUES ('54432912864','Félix Prates Belém','Rua Baiao de Dois','Cidade das Flores','Amazonas','AM','4865150','50','M','263','26,3','0');
 
------- x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
 
 -- Este script funcional está no exemplo da pasta (Criação de tabela).
 -- Segundo exemplo:
@@ -111,3 +113,31 @@ INSERT INTO TBL_PRODUTOS (PRODUTO, NOME, EMBALAGEM, TAMANHO, SABOR, PRECO_LISTA)
 INSERT INTO TBL_PRODUTOS (PRODUTO, NOME, EMBALAGEM, TAMANHO, SABOR, PRECO_LISTA) VALUES ('1013793','Videira do Campo - 2 Litros - Cereja/Maça','PET','2 Litros','Cereja/Maça','24,01');
 INSERT INTO TBL_PRODUTOS (PRODUTO, NOME, EMBALAGEM, TAMANHO, SABOR, PRECO_LISTA) VALUES ('1096818','Linha Refrescante - 700 ml - Manga','Garrafa','700 ml','Manga','7,7105');
 INSERT INTO TBL_PRODUTOS (PRODUTO, NOME, EMBALAGEM, TAMANHO, SABOR, PRECO_LISTA) VALUES ('1022450','Festival de Sabores - 2 Litros - Açai','PET','2 Litros','Açai','38,012');
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+
+-- Este script funcional está no exemplo da pasta (Criação de tabela).
+-- Terceiro exemplo:
+CREATE TABLE TBL_VENDEDORES (
+     MATRICULA VARCHAR (30)
+    ,NOME VARCHAR (150)
+    ,PERCENTUAL_COMISSAO NUMBER
+
+);
+
+-- Comando para inserção de registros na tabela que foi criada acima.
+-- Terceiro exemplo, onde neste caso haverá somente inserção de uma linha:
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00875, 'Ricardo Barbosa', 8);
+
+-- Inserindo diversos registros na tabela de produtos. 
+-- Antes de inserir esses valores na tabela de produtos, dê um truncate na tabela de produtos e rode os comando abaixo.
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00875, 'Ricardo Barbosa', 8);
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00989, 'Rafael de Brito Nascimento', 8);
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00108, 'Tabata Line de Souza', 8);
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00276, 'Nilson Ramos de Souza', 8);
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00785, 'Edgar Gerevini Carvalho', 8);
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00324, 'Uilson Lima de Castro', 8);
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00235, 'Márcio Almeida Silva', 8);
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00236, 'Cláudia Morais', 8);
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
