@@ -139,5 +139,6 @@ INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00785,
 INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00324, 'Uilson Lima de Castro', 8);
 INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00235, 'Márcio Almeida Silva', 8);
 INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00236, 'Cláudia Morais', 8);
+INSERT INTO TBL_VENDEDORES (MATRICULA, NOME, PERCENTUAL_COMISSAO) VALUES (00233, 'José Geraldo da Fonseca', 8);
 
 ------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
