@@ -118,3 +118,26 @@ ALTER TABLE TBL_PRODUTOS ADD CONSTRAINT PK_TBL_PRODUTOS PRIMARY KEY (PRODUTO);
 SELECT * FROM TBL_PRODUTOS;
 
 ------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
+
+-- Sétima maneira:
+-- Adicionando uma nova coluna em uma tabela existente.
+
+-- Tabela sem restrição:
+CREATE TABLE TBL_PRODUTOS (
+     PRODUTO VARCHAR (11)
+    ,NOME VARCHAR (150)
+    ,EMBALAGEM VARCHAR (50)
+    ,TAMANHO VARCHAR (50)
+    ,SABOR VARCHAR (50)
+    ,PRECO_LISTA FLOAT
+);
+
+-- Alterando e inserindo chave primária.
+ALTER TABLE TBL_PRODUTOS ADD CONSTRAINT PK_TBL_PRODUTOS PRIMARY KEY (PRODUTO);
+
+ALTER TABLE TBL_PRODUTOS ADD DATA_VALIDADE DATE;
+
+-- Execute o select da tabela para verificação da da alteração.
+SELECT * FROM TBL_PRODUTOS;
+
+------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
