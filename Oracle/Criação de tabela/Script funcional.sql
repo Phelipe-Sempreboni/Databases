@@ -11,12 +11,13 @@ CREATE TABLE TBL_CADASTRO_CLIENTES (
     ,BAIRRO VARCHAR (100)
     ,CIDADE VARCHAR (60)
     ,ESTADO VARCHAR (5)
-    ,CEP VARCHAR (10)
+    ,CEP VARCHAR (30)
     ,IDADE INT
     ,SEXO VARCHAR (20)
     ,LIMITE_CREDITO_COMPRA FLOAT
     ,VOLUME_MINIMO_COMPRA FLOAT
     ,PRIMEIRA_COMPRA NUMBER (1)
+    ,DATA_NASCIMENTO DATE
 );
 
 ------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x------ x
@@ -40,6 +41,8 @@ CREATE TABLE TBL_VENDEDORES (
      MATRICULA VARCHAR (30)
     ,NOME VARCHAR (150)
     ,PERCENTUAL_COMISSAO NUMBER
+    ,DATA_ADMISSAO DATE
+    ,ESTA_DE_FERIAS VARCHAR(4)
 
 );
 
