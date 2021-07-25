@@ -74,6 +74,6 @@ GO
 -- Realize um select * from da function conforme abaixo e insira os valores de datas conforme abaixo.
 -- O mais indicado é utilizar o modelo abaixo.
 
-SELECT * FROM [PERSONAL].[CALENDARIO].[FN_CALENDARIO_PADRÃO_ES_US] ('20191231' , '20220101')
+SELECT * FROM [PERSONAL].[CALENDARIO].[FN_CALENDARIO_PADRÃO_PT_BR] ('20191231' , '20220101')
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
