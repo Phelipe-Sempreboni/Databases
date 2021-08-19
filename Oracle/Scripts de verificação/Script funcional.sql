@@ -13,7 +13,6 @@ END;
 /
 ------------------------------------------------------------------------------------------------------------------------
 -- Exemplo de script que faz uma verificação de um servidor ou hostname ou ip, onde, caso um servidor/hostname/ip exista ela prossegue e não faz nada e caso não haja ela executa o comando e faz o INSERT.
-
 DECLARE
 REGISTER_EXISTS VARCHAR2(200);
 BEGIN
@@ -25,10 +24,8 @@ END IF;
 END;
 /
 ------------------------------------------------------------------------------------------------------------------------
-
 -- Neste caso abaixo, é um script que antes de criar a tabela, ele verifica se ela não existe, e caso não exista é criada, caso contrátio, será mantida a tabela existente e uma mensagem será exibida que a tabela já existe.
 -- Neste script fizemos como se o schema/usuário fosse o próprio padrão do Oracle Database, o SYSTEM.
-
 SET ECHO ON
 
 SET SERVEROUT ON
