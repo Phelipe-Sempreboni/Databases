@@ -12,15 +12,15 @@ Como sempre busco na web informações sobre SQL Server, MySQL, Oracle, SQLite S
 
 #### Abaixo os tipos e/ou divisões e significados das siglas para quem não souber e são importantes dentro das ferramentas de banco de dados.
 
-* DQL - Data Query Language (Linguagem de Consulta de dados) - Comandos de consulta.
+* DDL - Data Definition Language (Linguagem de Definição de Dados) - É um conjunto de instruções usado para criar e modificar as estrutudas dos objetos armazenados no banco de dados.
 
-* DML - Data Manipulation Language (Linguagem de Manipulação de Dados) - Comandos que interagem com os dados dentro das tabelas.
+* DQL - Data Query Language (Linguagem de Consulta de dados) - É um conjunto de instruções usar para consultar dados nas estruturas dos objetos armazenados no banco de dados.
 
-* DDL - Data Definition Language (Linguagem de Definição de Dados) - Comandos que interagem com os objetos do banco.
+* DML - Data Manipulation Language (Linguagem de Manipulação de Dados) - É um conjunto de instruções usada nas consultas e modificações dos dados armazenados nas tabelas do banco de dados.
 
-* DCL - Data Control Language (Linguagem de Controle de Dados) - Comandos para controlar a parte de segurança do banco de dados.
+* DCL - Data Control Language (Linguagem de Controle de Dados) - São usados para controle de acesso e gerenciamento de permissões para usuários no banco de dados.
 
-* DTL - Data Transaction Language (Linguagem de Transação de Dados) - Comandos para controle de transação e nativos para SQL Server.
+* DTL - Data Transaction Language (Linguagem de Controle de Transação de Dados) - São usados para gerenciar as mudanças feitas por instruções DML e permite as declarações serem agrupadas em transações lógicas.
 
 * PL/SQL - Procedural Language extensions to SQL (Extensões de linguagem procedural para SQL) - Comandos nativos para Oracle Database.
 
