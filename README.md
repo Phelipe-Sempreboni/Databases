@@ -26,6 +26,18 @@ Como sempre busco na web informações sobre SQL Server, MySQL, Oracle, SQLite S
 
 ---
 
+#### Abaixo conceitos importantes sobre JOINS (Junções) em bancos de Dados.
+
+* INNER JOIN - Retorna registros que possuem valores correspondentes nas duas tabelas.
+
+* LEFT OUTER JOIN - Retorna todos os registros da tabela a esquerda e registros correspondentes da tabela a direita.
+
+* RIGHT OUTER JOIN - Retorna todos os registros da tabela da direita e os registros correspondentes da tabela da esquerda.
+
+* FULL OUTER JOIN - Retorna todos os registros quando houver uma correspondência na tabela esquerda ou direta.
+
+---
+
 [Acesse meu GitHub :cat:](https://github.com/Phelipe-Sempreboni)
 
 [Acesse meu LinkedIn :computer:](https://www.linkedin.com/in/luiz-phelipe-utiama-sempreboni-319902169/)
