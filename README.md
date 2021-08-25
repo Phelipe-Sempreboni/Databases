@@ -113,6 +113,12 @@ Data Warehouse vs Data Mart.
 
 ---
 
+* Abaixo deixo uma animação/imagem que a Semantix fez sobre o funcionamento de um processo de ETL/ETC, que ficou show:
+
+![image](https://user-images.githubusercontent.com/57469401/130879284-6c80a48a-f8f3-4e4b-bc85-dd6a68bebc97.png)
+
+---
+
 
 [Acesse meu GitHub :cat:](https://github.com/Phelipe-Sempreboni)
 
