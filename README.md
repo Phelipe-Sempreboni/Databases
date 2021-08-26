@@ -2,13 +2,11 @@
 
 ---
 
-#### Repositório para informações e apoio sobre banco de dados, onde inicialmente era somente para um tipo, porém, virou um repositório variado!
-
-#### Também será abordado assuntos como Data Warehouses, Data Marts, Datalakes, ETL/ETC, Modelagem de dados, entre outros.
+#### Repositório para informações e apoio sobre banco de dados, onde inicialmente era somente para um tipo, porém, virou um repositório variado.
 
 ---
 
-Como sempre busco na web informações sobre banco de dados quando preciso continuar um projeto ou assunto que desconheço, na própria documentação ou no Stack Overflow, criei esse repositório visando tentar ajudar (quem chegar até aqui) com informações sobre databases, Data Warehouses, Data Marts, Datalakes, ETL/ETC, Modelagem de dados, entre outros, com querys, consultas, tipos e/ou divisões __(DQL, DML, DDL, DCL, DTL)__ e até onde for possível ajudar e de acordo com avanço dos meus conhecimentos, estudos, trabalho e tudo que puder agregar para a comunidade.
+Como sempre busco na web informações sobre banco de dados quando preciso continuar um projeto ou assunto que desconheço, na própria documentação ou no Stack Overflow, criei esse repositório visando tentar ajudar (quem chegar até aqui) com informações sobre databases, com querys, consultas, tipos e/ou divisões __(DQL, DML, DDL, DCL, DTL)__ e até onde for possível ajudar e de acordo com avanço dos meus conhecimentos, estudos, trabalho e tudo que puder agregar para a comunidade.
 
 Neste arquivo README.md serão mantidas diversas informações e que julgar mais importantes para este mundo incrível de database, dados, modelagem de dados e todos assuntos que nos cercam!
 
@@ -39,81 +37,6 @@ Neste arquivo README.md serão mantidas diversas informações e que julgar mais
 * RIGHT OUTER JOIN - Retorna todos os registros da tabela da direita e os registros correspondentes da tabela da esquerda.
 
 * FULL OUTER JOIN - Retorna todos os registros quando houver uma correspondência na tabela esquerda ou direta.
-
----
-
-#### Abaixo conceitos importantes sobre Data Warehouse.
-
-* É uma base de dados que facilita a execução de consultas de apoio à decisão.
-
-* Fornece uma imagem global da realidade do negócio a partir de suas operações.
-
-* Exibe informações em niveís apropriados e variados de detalhes.
-
-* Otimizar o processamento de consultas complexas.
-
-* Orientado por assunto.
-
-* Integrado.
-
-* Dados históricos.
-
-* Não volátil.
-
-- Exemplo abaixo para um melhor entendimento.
-
-![image](https://user-images.githubusercontent.com/57469401/130877850-ff5fe427-31a6-4e71-a44c-bd8ca41c9932.png)
-
----
-
-#### Abaixo conceitos importantes sobre Data Mart.
-
-* Visão setorial para tratar um assunto específico (área) ou diferentes niveís de sumarização.
-
-* Atene às necessidades de informações de uma determinada comunidade de usuários.
-
----
-
-Data Warehouse vs Data Mart.
-
-* Data Marts são subconjuntos departamentais focados em assuntos selecionados.
-
-* Quando falamos em Data Marts, seria falar sobre setorização do Data Warehouse, onde o DW realiza o armazenamento e com os Data Marts podemos setorizar os assuntos, como por exemplo, financeiro, compras, vendas, atendimento ao cliente, entre outros.
-
----
-
-#### Abaixo conceitos importantes sobre ETL/ETC.
-
-
-* Realizamos o processo de ETL (Extract, transform e load) ou ETC (Extração, trasnformação e carga) para extrair informações das mais diversas fontes de dados, tratamos os dados deixando em formatos amigáveis e carregamos esses dados para o Data Warehouse.
-
-- Exemplo abaixo para um melhor entendimento.
-
-![image](https://user-images.githubusercontent.com/57469401/130878452-877d431d-1af7-49a3-b81e-abb246daf144.png)
-
----
-
-#### Abaixo conceitos importantes sobre Data Warehousing.
-
-* Data Warehousing é o processo de extrair dados de sistemas transacionais e transformá-los em informação organizada em um formato amigável.
-
-- Exemplo abaixo para um melhor entendimento.
-
-![image](https://user-images.githubusercontent.com/57469401/130878684-36f3eba4-3b72-41a8-a312-c439c552e7ef.png)
-
----
-
-#### Abaixo conceitos importantes sobre OLTP (Online Transaction Processing - Nível Operacional) e OLAP (OnlineAnalytica Processing - Nível Estratégico).
-
-* OLTP (Online Transaction Processing - Nível Operacional):
-  - Finalidade é controlar e executar tarefas empresariais fundamentais.
-  - Dados Operacioais, atuais, refletem o presente.
-  - São a fonte original dos dados.
-
-* OLAP (Online Analytical Processing - Nível Estratégico):
-  - Finalidade é ajudar no planejamento, resolução de problemas e suporte à decisão.
-  - Dados de consolidação, históricos.
-  - Originários de vários bancos de dados OLTP.
 
 ---
 
