@@ -110,7 +110,7 @@ Data Warehouse vs Data Mart.
   - Dados Operacioais, atuais, refletem o presente.
   - São a fonte original dos dados.
 
-* OLAP (OnlineAnalytica Processing - Nível Estratégico):
+* OLAP (Online Analytical Processing - Nível Estratégico):
   - Finalidade é ajudar no planejamento, resolução de problemas e suporte à decisão.
   - Dados de consolidação, históricos.
   - Originários de vários bancos de dados OLTP.
