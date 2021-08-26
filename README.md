@@ -1,12 +1,16 @@
-# SQL Server, MySQL, Oracle, SQLite Studio
+# Databases
 
 ---
 
-#### Repositório para informações e apoio sobre banco de dados, como SQL Server, MySQL, Oracle, SQLite Studio.
+#### Repositório para informações e apoio sobre banco de dados, onde inicialmente era somente para um tipo, porém, virou um repositório variado!
+
+#### Também será abordado assuntos como Data Warehouses, Data Marts, Datalakes, ETL/ETC, Modelagem de dados, entre outros.
 
 ---
 
-Como sempre busco na web informações sobre SQL Server, MySQL, Oracle, SQLite Studio, quando preciso continuar um projeto ou assunto que desconheço, na própria documentação ou no Stack Overflow, criei esse repositório visando tentar ajudar (quem chegar até aqui) com informações de SQL Server, MySQL, Oracle, SQLite Studio, com querys, consultas, tipos e/ou divisões __(DQL, DML, DDL, DCL, DTL)__ e até onde for possível ajudar e de acordo com avanço dos meus conhecimentos, estudos, trabalho e tudo que puder agregar para a comunidade.
+Como sempre busco na web informações sobre banco de dados quando preciso continuar um projeto ou assunto que desconheço, na própria documentação ou no Stack Overflow, criei esse repositório visando tentar ajudar (quem chegar até aqui) com informações sobre databases, Data Warehouses, Data Marts, Datalakes, ETL/ETC, Modelagem de dados, entre outros, com querys, consultas, tipos e/ou divisões __(DQL, DML, DDL, DCL, DTL)__ e até onde for possível ajudar e de acordo com avanço dos meus conhecimentos, estudos, trabalho e tudo que puder agregar para a comunidade.
+
+Neste arquivo README.md serão mantidas diversas informações e que julgar mais importantes para este mundo incrível de database, dados, modelagem de dados e todos assuntos que nos cercam!
 
 ---
 
