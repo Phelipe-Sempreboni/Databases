@@ -1,0 +1,4 @@
+-- Script para verificar chaves primárias nas tabelas.
+SELECT * FROM ALL_CONSTRAINTS;
+
+SELECT * FROM ALL_CONSTRAINTS WHERE TABLE_NAME = 'ETL_SAP_ESTOQUE' AND CONSTRAINT_TYPE = 'P';
