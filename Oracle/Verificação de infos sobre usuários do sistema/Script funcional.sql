@@ -69,12 +69,21 @@ SELECT * FROM DBA_USERS WHERE USERNAME = '&NOME_DO_USUARIO';
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+-- Verificar de informações sobre o profile do usuário.
+
+SELECT SYS.DBMS_METADATA.GET_DDL('PROFILE', PR.NAME) DDL_STRING
+FROM (SELECT DISTINCT PI.NAME FROM SYS.PROFNAME$ PI
+WHERE PI.NAME = 'PR_PROFILE_TESTE') PR;
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 -- Consulta para verificar as permissões concedidas a uma role
 
 SELECT * FROM ROLE_ROLE_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
 SELECT * FROM ROLE_TAB_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
 SELECT * FROM ROLE_SYS_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
 SELECT * FROM DBA_USERS WHERE USERNAME = '&NOME_DO_USUARIO';
+SELECT SYS.DBMS_METADATA.GET_DDL('PROFILE', PR.NAME) DDL_STRING FROM (SELECT DISTINCT PI.NAME FROM SYS.PROFNAME$ PI WHERE PI.NAME = 'PR_PROFILE_TESTE') PR;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
