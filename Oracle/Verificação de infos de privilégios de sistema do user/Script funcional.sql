@@ -63,11 +63,18 @@ SELECT * FROM DBA_SYS_PRIVS WHERE GRANTEE = '&NOMEDOUSUARIO';
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+-- Verificar informações sobre o usuário e também verificar se o usuári existe.
+
+SELECT * FROM DBA_USERS WHERE USERNAME = '$NOME_DO_USUARIO';
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 -- Consulta para verificar as permissões concedidas a uma role
 
 SELECT * FROM ROLE_ROLE_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
 SELECT * FROM ROLE_TAB_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
 SELECT * FROM ROLE_SYS_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
+SELECT * FROM DBA_USERS WHERE USERNAME = '$NOME_DO_USUARIO';
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
