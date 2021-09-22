@@ -66,6 +66,7 @@ SELECT * FROM DBA_SYS_PRIVS WHERE GRANTEE = '&NOMEDOUSUARIO';
 -- Verificar informações sobre o usuário e também verificar se o usuári existe.
 
 SELECT * FROM DBA_USERS WHERE USERNAME = '&NOME_DO_USUARIO';
+SELECT * FROM ALL_USERS WHERE USERNAME = '&NOME_DO_USUARIO';
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -83,6 +84,7 @@ SELECT * FROM ROLE_ROLE_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
 SELECT * FROM ROLE_TAB_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
 SELECT * FROM ROLE_SYS_PRIVS WHERE ROLE = '&NOME_DA_ROLE';
 SELECT * FROM DBA_USERS WHERE USERNAME = '&NOME_DO_USUARIO';
+SELECT * FROM ALL_USERS WHERE USERNAME = '&NOME_DO_USUARIO';
 SELECT SYS.DBMS_METADATA.GET_DDL('PROFILE', PR.NAME) DDL_STRING FROM (SELECT DISTINCT PI.NAME FROM SYS.PROFNAME$ PI WHERE PI.NAME = 'PR_PROFILE_TESTE') PR;
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
