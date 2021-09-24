@@ -82,3 +82,27 @@ BEGIN
 END;
 /
 ------------------------------------------------------------------------------------------------------------------------
+
+-- Script para forçar e derrubar usuários logados e inativos.
+
+set serveroutput on ;
+ declare 
+ cursor c_bruxo  
+ is 
+ select 'begin 
+rdsadmin.rdsadmin_util.kill(
+sid    => '||sid||', 
+serial => '||serial#||',
+method => ''IMMEDIATE'');
+end ;
+'  as script from v$session where username = 'DATAGOVERNANCE_ADM' and machine like 'retroclassificationservice%' and status = 'INACTIVE';
+ 
+ begin 
+    for c_r10 in c_bruxo
+ loop
+ 
+dbms_output.put_line(''||  c_r10.script||'');
+  execute immediate  c_r10.script;
+ end loop;
+ end;
+------------------------------------------------------------------------------------------------------------------------
