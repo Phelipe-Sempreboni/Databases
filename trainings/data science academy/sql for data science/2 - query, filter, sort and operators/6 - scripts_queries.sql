@@ -79,6 +79,9 @@ FROM dsa_module_two.tb_navios
 
 WHERE classificacao_risco IN ('A', 'B') AND indice_conformidade > 90
 
-ORDER BY nome_navio;
+ORDER BY 
+	indice_conformidade ASC
+    
+LIMIT 10;
 
 ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x
