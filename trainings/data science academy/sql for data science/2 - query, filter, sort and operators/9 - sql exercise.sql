@@ -1,0 +1,1 @@
+-- Exericicios de sql do módulo 1 do curso de SQL Para Data Science.
