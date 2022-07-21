@@ -103,10 +103,28 @@ LIMIT 10;
 
 ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x
 
+SELECT indice_conformidade FROM dsa_module_two.tb_navios WHERE indice_conformidade > 90;
 
+------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x
 
+SELECT
+	 nome_navio
+    ,classificacao_risco
+    ,indice_conformidade
+    ,temporada
 
+FROM dsa_module_two.tb_navios 
 
+WHERE indice_conformidade IN (SELECT indice_conformidade FROM dsa_module_two.tb_navios WHERE indice_conformidade > 90)
 
+AND mes_ano = '04/2018' 
+
+AND pontuacao_risco = 0
+
+ORDER BY 
+	 indice_conformidade
+    ,nome_navio
+    
+LIMIT 10;
 
 ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x
