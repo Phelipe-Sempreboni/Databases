@@ -80,7 +80,24 @@ FROM dsa_module_two.tb_navios
 WHERE classificacao_risco IN ('A', 'B') AND indice_conformidade > 90
 
 ORDER BY 
-	indice_conformidade ASC
+	 indice_conformidade
+    ,nome_navio
+    
+LIMIT 10;
+
+------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x
+
+# Em abril de 2018 alguma embarcação teve índice de conformidade de 100% e pontuação de risco igual a 0 ?
+
+SELECT *
+
+FROM dsa_module_two.tb_navios 
+
+WHERE mes_ano = '04/2018' AND indice_conformidade = 100 AND pontuacao_risco = 0
+
+ORDER BY 
+	 indice_conformidade
+    ,nome_navio
     
 LIMIT 10;
 
