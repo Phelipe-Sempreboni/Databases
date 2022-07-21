@@ -54,3 +54,17 @@ WHERE classificacao_risco = 'E' AND pontuacao_risco > 3000
 ORDER BY nome_navio;
 
 ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x
+
+SELECT
+	 nome_navio
+    ,classificacao_risco
+    ,indice_conformidade
+    ,temporada
+
+FROM dsa_module_two.tb_navios 
+
+WHERE classificacao_risco IN ('A', 'B') AND indice_conformidade > 98
+
+ORDER BY nome_navio;
+
+------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x ------- x
