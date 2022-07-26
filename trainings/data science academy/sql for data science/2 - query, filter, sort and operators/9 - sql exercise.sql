@@ -8,6 +8,7 @@ SELECT * FROM dsa_module_two.tb_navios WHERE classificacao_risco = "A" AND indic
 
 -- 3. Quaia embarcações têm classificação de risco C ou D e índice de conformidade menor ou igual à 95% ?
 SELECT * FROM dsa_module_two.tb_navios WHERE classificacao_risco = "C" OR classificacao_risco = "D" AND indice_conformidade <= 95;
+SELECT * FROM dsa_module_two.tb_navios WHERE classificacao_risco IN ("C", "D") AND indice_conformidade <= 95;
 
 -- 4. Quais embarcações têm classificação de risco A ou pontuação de risco igual à 0 ?
 SELECT * FROM dsa_module_two.tb_navios WHERE classificacao_risco = "A" OR pontuacao_risco = 0;
