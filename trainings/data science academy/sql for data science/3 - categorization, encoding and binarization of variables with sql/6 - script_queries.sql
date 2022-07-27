@@ -129,9 +129,14 @@ SELECT * FROM dsa_module_three.tb_dados;
 SELECT * 
 ,
 	CASE
-		WHEN seio = "left" THEN "E"
-		WHEN seio = "right" THEN "D"
-	END AS seio_cat
+		WHEN quadrante = "right_up" THEN 1
+		WHEN quadrante = "right_low" THEN 2
+        WHEN quadrante = "left_up" THEN 3
+        WHEN quadrante = "left_low" THEN 4
+        WHEN quadrante = "central" THEN 5
+		ELSE 0
+        
+	END AS quadrante_label
 
 FROM dsa_module_three.tb_dados;
 
