@@ -119,3 +119,20 @@ SELECT *
 FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
+
+SELECT DISTINCT quadrante FROM dsa_module_three.tb_dados;
+
+SELECT * FROM dsa_module_three.tb_dados;
+
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
+
+SELECT * 
+,
+	CASE
+		WHEN seio = "left" THEN "E"
+		WHEN seio = "right" THEN "D"
+	END AS seio_cat
+
+FROM dsa_module_three.tb_dados;
+
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x
