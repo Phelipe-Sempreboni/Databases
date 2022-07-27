@@ -8,7 +8,7 @@ SELECT COUNT(*) FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
-SELECT DISTINCT irradiando FROM dsa_module_three.tb_dados;
+SELECT DISTINCT node_caps FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
@@ -38,8 +38,10 @@ FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
+SELECT DISTINCT node_caps FROM dsa_module_three.tb_dados;
 
+SELECT * FROM dsa_module_three.tb_dados;
 
-
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
 
