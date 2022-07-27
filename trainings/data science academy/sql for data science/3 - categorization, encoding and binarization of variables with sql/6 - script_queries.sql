@@ -87,3 +87,25 @@ SELECT * FROM dsa_module_three.tb_dados;
 -- 35-39
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
+
+SELECT * 
+,
+	CASE
+		WHEN tamanho_tumor = "10-14" THEN "Tumor de tamanho entre 10 à 14"
+        WHEN tamanho_tumor = "15-19" THEN "Tumor de tamanho entre 15 à 19"
+        WHEN tamanho_tumor = "20-24" THEN "Tumor de tamanho entre 20 à 24"
+        WHEN tamanho_tumor = "25-29" THEN "Tumor de tamanho entre 25 à 29"
+        WHEN tamanho_tumor = "30-34" THEN "Tumor de tamanho entre 30 à 34"
+        WHEN tamanho_tumor = "35-39" THEN "Tumor de tamanho entre 35 à 39"
+
+	END AS tamanho_tumor_cat
+
+FROM dsa_module_three.tb_dados;
+
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
+
+
+
+
+
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
