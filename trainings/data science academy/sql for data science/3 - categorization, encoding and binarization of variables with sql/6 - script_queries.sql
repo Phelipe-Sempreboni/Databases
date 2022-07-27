@@ -51,7 +51,25 @@ SELECT *
 	CASE
 		WHEN node_caps = "no" THEN 0
 		WHEN node_caps = "yes" THEN 1
+        ELSE 2
 	END AS node_caps_bin
+
+FROM dsa_module_three.tb_dados;
+
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
+
+SELECT DISTINCT seio FROM dsa_module_three.tb_dados;
+
+SELECT * FROM dsa_module_three.tb_dados;
+
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
+
+SELECT * 
+,
+	CASE
+		WHEN seio = "left" THEN "E"
+		WHEN seio = "right" THEN "D"
+	END AS seio_cat
 
 FROM dsa_module_three.tb_dados;
 
@@ -59,3 +77,4 @@ FROM dsa_module_three.tb_dados;
 
 
 
+    
