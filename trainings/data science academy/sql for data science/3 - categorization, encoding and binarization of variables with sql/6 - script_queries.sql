@@ -141,3 +141,55 @@ SELECT *
 FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x
+
+SELECT * 
+,
+
+	CASE
+		WHEN classe = "no-recurrence-events" THEN 0
+		WHEN classe = "recurrence-events" THEN 1
+	END AS classe_bin,
+    
+	CASE
+		WHEN irradiando = "no" THEN 0
+		WHEN irradiando = "yes" THEN 1
+	END AS irradiando_bin,
+    
+	CASE
+		WHEN node_caps = "no" THEN 0
+		WHEN node_caps = "yes" THEN 1
+        ELSE 2
+	END AS node_caps_bin,
+    
+	CASE
+		WHEN seio = "left" THEN "E"
+		WHEN seio = "right" THEN "D"
+	END AS seio_cat,
+    
+	CASE 
+		WHEN tamanho_tumor = '0-4' OR tamanho_tumor = '5-9' THEN 'Muito Pequeno'
+        WHEN tamanho_tumor = '10-14' OR tamanho_tumor = '15-19' THEN 'Pequeno'
+        WHEN tamanho_tumor = '20-24' OR tamanho_tumor = '25-29' THEN 'Medio'
+        WHEN tamanho_tumor = '30-34' OR tamanho_tumor = '35-39' THEN 'Grande'
+        WHEN tamanho_tumor = '40-44' OR tamanho_tumor = '45-49' THEN 'Muito Grande'
+        WHEN tamanho_tumor = '50-54' OR tamanho_tumor = '55-59' THEN 'Tratamento Urgente'
+        
+	END AS tamanho_tumor_cat,
+    
+	CASE
+		WHEN quadrante = "right_up" THEN 1
+		WHEN quadrante = "right_low" THEN 2
+        WHEN quadrante = "left_up" THEN 3
+        WHEN quadrante = "left_low" THEN 4
+        WHEN quadrante = "central" THEN 5
+		ELSE 0
+        
+	END AS quadrante_label
+
+FROM dsa_module_three.tb_dados;
+
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x
+
+
+
+
