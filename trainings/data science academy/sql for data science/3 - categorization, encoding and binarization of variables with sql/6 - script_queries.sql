@@ -44,4 +44,10 @@ SELECT * FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
+# Binarização da variável node_caps (0/1)
+
+
+
+
+
 
