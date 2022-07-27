@@ -46,7 +46,14 @@ SELECT * FROM dsa_module_three.tb_dados;
 
 # Binarização da variável node_caps (0/1)
 
+SELECT * 
+,
+	CASE
+		WHEN node_caps = "no" THEN 0
+		WHEN node_caps = "yes" THEN 1
+	END AS node_caps_bin
 
+FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
