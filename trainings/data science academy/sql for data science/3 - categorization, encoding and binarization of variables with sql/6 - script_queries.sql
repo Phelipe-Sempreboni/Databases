@@ -16,14 +16,15 @@ SELECT DISTINCT classe FROM dsa_module_three.tb_dados;
 
 SELECT * 
 ,
-CASE
-	WHEN classe = "no-recurrence-events" THEN 0
-    WHEN classe = "recurrence-events" THEN 1
-    END AS teste
-    
+	CASE
+		WHEN classe = "no-recurrence-events" THEN 0
+		WHEN classe = "recurrence-events" THEN 1
+	END AS classe_bin
+
 FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
+
 
 
 
