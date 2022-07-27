@@ -75,6 +75,15 @@ FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
+SELECT DISTINCT tamanho_tumor FROM dsa_module_three.tb_dados ORDER BY tamanho_tumor;
 
+SELECT * FROM dsa_module_three.tb_dados;
+
+-- 10-14
+-- 15-19
+-- 20-24
+-- 25-29
+-- 30-34
+-- 35-39
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
