@@ -8,7 +8,7 @@ SELECT COUNT(*) FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
-SELECT DISTINCT classe FROM dsa_module_three.tb_dados;
+SELECT DISTINCT irradiando FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
@@ -25,10 +25,18 @@ FROM dsa_module_three.tb_dados;
 
 ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
+# Binarização da variável irradiano (0/1)
 
+SELECT * 
+,
+	CASE
+		WHEN irradiando = "no" THEN 0
+		WHEN irradiando = "yes" THEN 1
+	END AS irradiando_bin
 
+FROM dsa_module_three.tb_dados;
 
-
+---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x ---- x 
 
 
 
