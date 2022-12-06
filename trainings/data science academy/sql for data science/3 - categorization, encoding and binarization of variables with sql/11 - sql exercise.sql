@@ -57,22 +57,22 @@ SELECT
     ,SEIO
     ,QUADRANTE
     ,IRRADIANDO
-	,CONCAT(INV_NODES, QUADRANTE) AS posicao_tumor
+	,CONCAT(INV_NODES, '-' ,QUADRANTE) AS POSICAO_TUMOR
 	,
 	CASE
 	WHEN menopausa = 'ge40' THEN 1
 	WHEN menopausa = 'lt40' THEN 2
 	WHEN menopausa = 'premeno' THEN 3
-	END AS menopausa_label
+	END AS MENOPAUSA_LABEL
     ,
     CASE
-    WHEN DEG_MALIG = 1 THEN 1 ELSE DEG_MALIG = 0 END AS deg_malig_label_1
+    WHEN DEG_MALIG = 1 THEN 1 ELSE DEG_MALIG = 0 END AS DEG_MALIG_LABEL_1
     ,
     CASE
-    WHEN DEG_MALIG = 2 THEN 2 ELSE DEG_MALIG = 0 END AS deg_malig_label_2
+    WHEN DEG_MALIG = 2 THEN 2 ELSE DEG_MALIG = 0 END AS DEG_MALIG_LABEL_2
     ,
     CASE
-    WHEN DEG_MALIG = 3 THEN 3 ELSE DEG_MALIG = 0 END AS deg_malig_label_3
+    WHEN DEG_MALIG = 3 THEN 3 ELSE DEG_MALIG = 0 END AS DEG_MALIG_LABEL_3
 
 FROM dsa_module_three.tb_dados2;
 
