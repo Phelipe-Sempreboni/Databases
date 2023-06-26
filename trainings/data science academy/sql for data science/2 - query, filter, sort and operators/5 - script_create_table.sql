@@ -1,3 +1,7 @@
+------------------------------------------------------------------------------------------------ #
+
+-- Exemplo de script de criação de uma tabela no MySQL.
+
 CREATE TABLE `dsa_module_two`.`tb_navios` (
   `nome_navio` VARCHAR(50) NULL,
   `mes_ano` VARCHAR(10) NULL,
@@ -5,3 +9,5 @@ CREATE TABLE `dsa_module_two`.`tb_navios` (
   `indice_conformidade` VARCHAR(15) NULL,
   `pontuacao_risco` INT NULL,
   `temporada` VARCHAR(200) NULL);
+  
+------------------------------------------------------------------------------------------------ #
