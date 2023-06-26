@@ -70,3 +70,26 @@ INNER JOIN dsa_module_four.tb_vendedor AS C ON A.id_vendedor = C.id_vendedor;
 
 # -------------------------------------------------------------------------------------------------------------------------------------- #
 
+# Notar que se você utilizar na sua query o (INNER JOIN) ou somente (JOIN), isso significa que você está utilizando um (INNER JOIN), então o SGBD entende o (JOIN) como uma abreviação para a consulta SQL.
+
+SELECT
+   A.id_pedido
+  ,B.nome_cliente
+
+FROM dsa_module_four.tb_pedidos AS A
+
+JOIN dsa_module_four.tb_clientes AS B ON A.id_cliente = B.id_cliente;
+
+# -------------------------------------------------------------------------------------------------------------------------------------- #
+
+# Se no relacionamento que você estiver fazendo os campos relacionados forem iguais, por exemplo, o termo (A.id_cliente = B.id_cliente), então você pode utilizar o comando (USING id_cliente), lembrando que o nome das colunas precisam ser iguais.
+
+SELECT
+   A.id_pedido
+  ,B.nome_cliente
+
+FROM dsa_module_four.tb_pedidos AS A
+
+INNER JOIN dsa_module_four.tb_clientes AS B USING (id_cliente);
+
+# -------------------------------------------------------------------------------------------------------------------------------------- #
