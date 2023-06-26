@@ -223,7 +223,7 @@ LEFT JOIN setores AS D ON B.id_setor = D.cod_setor;
 -- Bloco 7: Verificação se é possível excluir ou não uma informação de um campo com chave estrangeira.
 
 -- Comando para deletar uma valor do campo nome_cargo, porém, não é possível prosseguir devido a colunas com chaves.
-DELETE FROM cargos WHERE nome_cargo = 'Analista de Negócios'
+DELETE FROM cargos WHERE nome_cargo = 'Analista de Negócios';
 
 /*
 ---------------X---------------X---------------X---------------X---------------X---------------X---------------X---------------X---------------X---------------X---------------X---------------X---------------X
