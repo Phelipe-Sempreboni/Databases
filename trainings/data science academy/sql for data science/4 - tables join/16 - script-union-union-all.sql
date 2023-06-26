@@ -10,6 +10,12 @@
 
 -- Para que o (UNION ALL ou UNION) funcione, é necessário que as querys possuam a mesma QUANTIDADE de campos, ou seja, não precisa ser o mesmo nome, mas sim a mesma quantidade de campos.
 
+-- Os tipos de dados das colunas devem ser iguais, ou seja, uma coluna que for do tipo (STRING) não pode ter na outra query uma coluna do tipo (INT), ambas precisam ser do tipo (STRING).
+
+-- A ordem das colunas também deve ser a mesma, ou seja, caso uma coluna esteja fora de ordem em uma das querys, haverá falha.
+
+-- Os comandos (UNION ALL e UNION) podem não performar bem em algunas casos, principalmente se houver uma quantidade elevada de dados e baixo processamento disponível.
+
 SELECT
 	 A.nome_cliente
     ,B.id_pedido
