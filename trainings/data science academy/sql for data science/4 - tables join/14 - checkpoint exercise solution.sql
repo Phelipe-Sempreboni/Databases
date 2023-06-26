@@ -3,9 +3,9 @@
 # Retornar a data do pedido, o nome do cliente, todos os vendedores, com ou sem pedido associado, e ordenar o resultado pelo nome do cliente.
 
 SELECT
-	 C.nome_cliente
-	,A.nome_vendedor
-	,B.data_pedido
+	 CASE WHEN C.nome_cliente IS NULL THEN 'Sem pedido' ELSE C.nome_cliente END AS nome_cliente
+	,A.nome_vendedor 
+	,CASE WHEN B.data_pedido IS NULL THEN 'Sem pedido' ELSE B.data_pedido END AS data_pedido
     
 FROM dsa_module_four.tb_vendedor AS A 
 
