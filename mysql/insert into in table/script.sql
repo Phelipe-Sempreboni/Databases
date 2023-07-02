@@ -23,3 +23,20 @@ INSERT INTO setores (nome_setor) VALUES ('Network Global');
 INSERT INTO setores (nome_setor) VALUES ('Commercial and Faturing Global');
 
 ------------------------------------------------------------------------------------------------------------------- #
+
+INSERT INTO `cap04`.`TB_CLIENTES` (`id_cliente`, `nome_cliente`, `endereco_cliente`, `cidade_cliente`, `estado_cliente`)
+VALUES (6, "Madona", "Rua 45", "Campos", "RJ");
+
+INSERT INTO dsa_module_four.tb_clientes (`id_cliente`, `nome_cliente`, `endereco_cliente`, `cidade_cliente`, `estado_cliente`)
+VALUES (7, "Carlos Messias", "Rua Alberto Cassio", "Osasco", "SP");
+
+INSERT INTO dsa_module_four.tb_clientes (`id_cliente`, `nome_cliente`, `endereco_cliente`, `cidade_cliente`, `estado_cliente`)
+VALUES (8, "Richarlyson Alberto", "Rua Carlos Almeida Brandao", "Varginha", "MG");
+
+INSERT INTO dsa_module_four.tb_clientes (`id_cliente`, `nome_cliente`, `endereco_cliente`, `cidade_cliente`, `estado_cliente`)
+VALUES (9, "Abib Pastore", "Avenida Josias III", "Vargem Grande", "MG");
+
+INSERT INTO dsa_module_four.tb_clientes (`id_cliente`, `nome_cliente`, `endereco_cliente`, `cidade_cliente`, `estado_cliente`)
+VALUES (10, "Jose Paulo Almeida", "Travessa Portfolio dos Andes", "Camboriu", "RS");
+
+------------------------------------------------------------------------------------------------------------------- #
