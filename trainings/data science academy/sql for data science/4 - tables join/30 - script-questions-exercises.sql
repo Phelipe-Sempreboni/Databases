@@ -23,9 +23,3 @@ WHERE A.discipline = 'Handball' AND B.discipline = 'Handball'
 ORDER BY B.name;
 
 ------------------------------------------------------------------------------------------------------------------------------ #
-
--- Isso não pode ser feito, visto que a tabela (tb_medals) agrupa os valores e não estão com uma granularidade menor com mais detalhes para a análise.
-
-
-
------------------------------------------------------------------------------------------------------------------------------- #
