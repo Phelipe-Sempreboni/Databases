@@ -39,6 +39,22 @@ FROM dsa_module_four.tb_clientes AS A, dsa_module_four.tb_pedidos AS B;
 
 ------------------------------------------------------------------------------------------------------------------ #
 
+-- O exemplo abaixo é um CROSS JOIN com um filtro (WHERE) comparando os identificadores de de clientes.
+
+-- Notar que nesse caso o CROSS JOIN irá se tornar um INNER JOIN, ou seja, o CROSS JOIN nada mais é que um INNER JOIN sem o critério de filtro.
+
+-- Então aprendendo a manipular o CROSS JOIN, ele pode ser útil em algumas situações.
+
+SELECT
+	 A.nome_cliente
+    ,B.id_pedido
+    
+FROM dsa_module_four.tb_clientes AS A
+CROSS JOIN dsa_module_four.tb_pedidos AS B
+WHERE A.id_cliente = B.id_cliente;
+
+------------------------------------------------------------------------------------------------------------------ #
+
 -- CROOS JOIN para listar os dados de todas as combinações possíveis de empregados com departamentos.
 
 -- Notar que aqui não temos um relacionamento, mas sim uma possível combinação.
