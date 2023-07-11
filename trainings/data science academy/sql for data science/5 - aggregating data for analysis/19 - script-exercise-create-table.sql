@@ -57,14 +57,14 @@ CREATE TABLE dsa_module_five.tb_orders
     ,order_created_day INT
     ,order_created_month INT
     ,order_created_year INT
-    ,order_moment_created TIMESTAMP
-    ,order_moment_accepted TIMESTAMP
-    ,order_moment_ready TIMESTAMP
-    ,order_moment_collected TIMESTAMP
-    ,order_moment_in_expedition TIMESTAMP
-    ,order_moment_delivering TIMESTAMP
-    ,order_moment_delivered TIMESTAMP
-    ,order_moment_finished TIMESTAMP
+    ,order_moment_created VARCHAR(150)
+    ,order_moment_accepted VARCHAR(150)
+    ,order_moment_ready VARCHAR(150)
+    ,order_moment_collected VARCHAR(150)
+    ,order_moment_in_expedition VARCHAR(150)
+    ,order_moment_delivering VARCHAR(150)
+    ,order_moment_delivered VARCHAR(150)
+    ,order_moment_finished VARCHAR(150)
     ,order_metric_collected_time FLOAT
     ,order_metric_paused_time FLOAT
     ,order_metric_production_time FLOAT
