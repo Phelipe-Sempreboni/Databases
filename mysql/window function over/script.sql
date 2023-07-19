@@ -12,6 +12,14 @@
 
 -- Total de vendas por ano fiscal, funcionário e total de vendas geral dos anos.
 
+-- Notar que neste caso o OVER() não tem um campo que realizamos alguma ação, ou seja, realizado a função OVER() por todo o data set.
+
+-- Quando realizamos esse comando haverá a soma total, ou seja, tanto tanto por (ano_fiscal, nome de funcionário e valor de venda), onde será criado uma nova coluna e esses valores serão calculados.
+
+-- Isso pode ser útil, por exemplo, para uma comparação visual de valores e performance, ou até como um campo auxiliar para cálculo de porcetagem ou outras ações.
+
+-- Notar que quando utilizamos esse comando, não é necessário utilizar um GROUP BY, visto que o comando em si já basta.
+
 SELECT
 	 ano_fiscal
 	,nome_funcionario
@@ -47,6 +55,10 @@ ORDER BY ano_fiscal
 -- Número de vendas por ano, por funcionário e número total de vendas em todos os anos.
 
 -- Este é o mesmo cenário logo acima, porém escrito como uma subquerie
+
+-- Aqui podemos notar que temos mais uma querie sendo executada, ou seja, dependendo do volume de dados, quantidade de colunas, entre outros, pode haver problemas de performance do banco de dados.
+
+-- Tudo irá depender do seu cenário.
 
 SELECT
 	 ano_fiscal
