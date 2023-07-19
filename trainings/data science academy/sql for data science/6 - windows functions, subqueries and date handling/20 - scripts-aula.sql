@@ -136,13 +136,3 @@ ORDER BY ano_fiscal
 ;
 
 ------------------------------------------------------------------------------------------------------------------------ #
-
--- Criar os diretórios separados sobre window function no de database;
-
--- Explicar em cada query por quê tem particion ou somente over;
-
--- Mostrar o comparativo de fazer um over() com uma subquerie, onde devemos explicar que fazem a mesma função, porém a subquerie pode ter problemas de performance dependendo do volume de dados;
-	-- Notar que com over() temos somente uma querie, e com subquerie temos mais de uma querie, logo exige mais processamento do SGBD;
-	
------------------------------------------------------------------------------------------------------------------------- #
-	
