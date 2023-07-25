@@ -1,5 +1,5 @@
 # Cria a tabela
-CREATE TABLE cap06.TB_BIKES (
+CREATE TABLE dsa_module_six.tb_bikes (
   `duracao_segundos` int DEFAULT NULL,
   `data_inicio` text,
   `data_fim` text,
@@ -18,7 +18,6 @@ CREATE TABLE cap06.TB_BIKES (
 
 # Execute:
 SET GLOBAL local_infile = true;
-
 
 # Carrega os dados
 LOAD DATA LOCAL INFILE '/Users/dmpm/Dropbox/DSA/SQL-Para-Data-Science/Cap06/dados/2012-capitalbikeshare-tripdata/2012Q1-capitalbikeshare-tripdata.csv' INTO TABLE `cap06`.`TB_BIKES` CHARACTER SET UTF8
