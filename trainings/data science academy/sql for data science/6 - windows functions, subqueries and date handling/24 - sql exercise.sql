@@ -2,11 +2,14 @@
 
 -- 1-Qual a média de tempo (em segundos) de duração do aluguel de bike por tipo de membro?
 
-SELECT DISTINCT
+SELECT
      tipo_membro
-	,AVG(duracao_segundos) OVER (PARTITION BY tipo_membro) AS media_aluguel_tip_membro
+	,AVG(duracao_segundos) media
     
-FROM dsa_module_six.tb_bikes;
+FROM dsa_module_six.tb_bikes_q2
+
+GROUP BY
+    tipo_membro;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -17,7 +20,7 @@ SELECT DISTINCT
 	,estacao_fim
 	,AVG(duracao_segundos) OVER (PARTITION BY tipo_membro, estacao_fim) AS media_aluguel_tip_membro
     
-FROM dsa_module_six.tb_bikes;
+FROM dsa_module_six.tb_bikes_q2;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -29,7 +32,7 @@ SELECT
     ,data_fim
 	,AVG(duracao_segundos) OVER (PARTITION BY tipo_membro, estacao_fim ORDER BY data_fim) AS media_aluguel_tip_membro
     
-FROM dsa_module_six.tb_bikes;
+FROM dsa_module_six.tb_bikes_q2;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -41,7 +44,7 @@ SELECT
     ,COUNT(*) AS qtd_alugueis
 	,DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) as rank_qtd_alugueis
     
-FROM dsa_module_six.tb_bikes
+FROM dsa_module_six.tb_bikes_q2
 
 WHERE numero_bike = 'W01182'
 
@@ -58,7 +61,7 @@ SELECT
     ,data_inicio
     ,COUNT(*) OVER (ORDER BY data_inicio) as qtd_alugueis
 
-FROM dsa_module_six.tb_bikes
+FROM dsa_module_six.tb_bikes_q2
 
 WHERE numero_bike = 'W01182';
 
@@ -75,7 +78,7 @@ SELECT
     ,data_fim
     ,duracao_segundos
 
-FROM dsa_module_six.tb_bikes;
+FROM dsa_module_six.tb_bikes_q2;
 
 SELECT
 	 numero_bike
@@ -84,7 +87,7 @@ SELECT
     ,duracao_segundos
 	,COUNT(*) OVER (ORDER BY data_fim) AS qtd_alugueis
     
-FROM dsa_module_six.tb_bikes;
+FROM dsa_module_six.tb_bikes_q2;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
