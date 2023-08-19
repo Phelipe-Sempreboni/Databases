@@ -24,4 +24,8 @@ exit;
 LOAD DATA LOCAL INFILE 'C:/Users/pheli/Downloads/2012Q1-capitalbikeshare-tripdata.csv' INTO TABLE `dsa_module_six`.`tb_bikes` CHARACTER SET UTF8
 FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
 
+-- 4º: Execute os comandos abaixo para carregar os dados
+LOAD DATA LOCAL INFILE 'C:/Users/pheli/Downloads/2012Q2-capitalbikeshare-tripdata.csv' INTO TABLE `dsa_module_six`.`tb_bikes_q2` CHARACTER SET UTF8
+FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;
+
 ------------------------------------------------------------------------------------------------------------------------------------------------- #
