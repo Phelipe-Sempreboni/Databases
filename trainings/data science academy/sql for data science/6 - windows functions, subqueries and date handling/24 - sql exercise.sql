@@ -15,12 +15,16 @@ GROUP BY
 
 -- 2-Qual a média de tempo (em segundos) de duração do aluguel de bike por tipo de membro e por estação fim (onde as bikes são entregues após o aluguel)?
 
-SELECT DISTINCT
+SELECT
      tipo_membro
 	,estacao_fim
-	,AVG(duracao_segundos) OVER (PARTITION BY tipo_membro, estacao_fim) AS media_aluguel_tip_membro
+	,AVG(duracao_segundos) media
     
-FROM dsa_module_six.tb_bikes_q2;
+FROM dsa_module_six.tb_bikes_q2
+
+GROUP BY
+     tipo_membro
+	,estacao_fim;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -58,12 +62,16 @@ GROUP BY
 
 SELECT
 	 numero_bike
-    ,data_inicio
-    ,COUNT(*) OVER (ORDER BY data_inicio) as qtd_alugueis
+	,estacao_inicio
+    ,CAST(data_inicio AS DATE) AS data_inicio
+    ,COUNT(*) OVER (PARTITION BY estacao_inicio ORDER BY CAST(data_inicio AS DATE)) as qtd_alugueis
 
 FROM dsa_module_six.tb_bikes_q2
 
-WHERE numero_bike = 'W01182';
+WHERE numero_bike = 'W01182'
+
+ORDER BY
+	CAST(data_inicio AS DATE);
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
