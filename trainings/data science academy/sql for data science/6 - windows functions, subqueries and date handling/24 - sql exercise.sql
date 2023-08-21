@@ -85,17 +85,11 @@ SELECT
 	,estacao_fim
     ,data_fim
     ,duracao_segundos
-
-FROM dsa_module_six.tb_bikes_q2;
-
-SELECT
-	 numero_bike
-	,estacao_fim
-    ,data_fim
-    ,duracao_segundos
-	,COUNT(*) OVER (ORDER BY data_fim) AS qtd_alugueis
+	,COUNT(duracao_segundos) OVER (ORDER BY data_fim) AS qtd_alugueis
     
-FROM dsa_module_six.tb_bikes_q2;
+FROM dsa_module_six.tb_bikes_q2
+
+WHERE EXTRACT(MONTH FROM data_fim) = '04';
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
