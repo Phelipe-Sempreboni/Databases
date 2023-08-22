@@ -150,6 +150,22 @@ WHERE EXTRACT(HOUR FROM data_fim) BETWEEN 08 AND 11;
 -- Retorne os dados entre os dias '2012-04-01' e '2012-04-02.
 -- Dica: Use função window e subquery.
 
+SELECT * FROM (
 
+SELECT
+	 estacao_fim
+    ,CAST(data_fim AS DATE) AS data_fim
+    ,SUM(duracao_segundos/60/60) OVER (PARTITION BY estacao_fim ORDER BY CAST(data_fim AS DATE)) AS tempo_total_horas
+
+FROM dsa_module_six.tb_bikes_q2
+
+WHERE data_fim BETWEEN '2012-04-01' AND '2012-04-02'
+
+) AS tb
+
+WHERE tempo_total_horas >= 35
+
+ORDER BY
+	tempo_total_horas;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
