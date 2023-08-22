@@ -99,6 +99,15 @@ WHERE EXTRACT(MONTH FROM data_fim) = '04';
 -- Queremos a ordem (classificação ou ranking) dos dias de aluguel ao longo do tempo.
 -- Retornar os dados para os aluguéis entre 7 e 11 da manhã.
 
+SELECT
+	 estacao_fim
+    ,DATE_FORMAT(data_fim, "%d/%M/%Y %H:%i:%S") as data_fim
+    ,duracao_segundos
+	,DENSE_RANK() OVER (PARTITION BY estacao_fim ORDER BY CAST(data_fim AS DATE)) AS ranking_aluguel
+    
+FROM dsa_module_six.tb_bikes_q2
+
+WHERE EXTRACT(HOUR FROM data_fim) BETWEEN 07 AND 11;
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
@@ -106,7 +115,15 @@ WHERE EXTRACT(MONTH FROM data_fim) = '04';
 -- 8-Qual a diferença da duração do aluguel de bikesao longo do tempo, de um registro para outro, considerando data de início do aluguel e estação de início?
 -- A data de início deve ser retornada no formato: Sat/Jan/12 00:00:00 (Sat = Dia da semana abreviado e Jan igual mês abreviado). Retornar os dados para os aluguéis entre 01 e 03 da manhã.
 
+SELECT
+	 estacao_inicio
+    ,DATE_FORMAT(data_inicio, "%a/%b/%y %H:%i:%S") as data_inicio
+    ,duracao_segundos
+	,duracao_segundos - LAG(duracao_segundos, 1) OVER (PARTITION BY estacao_inicio ORDER BY CAST(data_inicio AS DATE)) AS diferenca
+    
+FROM dsa_module_six.tb_bikes_q2
 
+WHERE EXTRACT(HOUR FROM data_fim) BETWEEN 01 AND 03;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
@@ -117,7 +134,15 @@ WHERE EXTRACT(MONTH FROM data_fim) = '04';
 -- Retornar os dados para os aluguéis entre 8 e 10 da manhã.
 -- Qual critério usado pela função NTILE para dividir os grupos ?.
 
+SELECT
+	 estacao_fim
+    ,DATE_FORMAT(data_fim, "%d/%M/%Y %H:%i:%S") as data_fim
+    ,duracao_segundos
+	,NTILE(4) OVER (PARTITION BY estacao_fim ORDER BY CAST(data_fim AS DATE)) AS ranking_aluguel
+    
+FROM dsa_module_six.tb_bikes_q2
 
+WHERE EXTRACT(HOUR FROM data_fim) BETWEEN 08 AND 11;
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ #
 
