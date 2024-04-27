@@ -2,6 +2,8 @@
 
 -- Script 01
 
+------------------------------------------------------------------------------------------------------------- #
+
 -- Cria a tabela
 CREATE TABLE dsa_module_eight.tb_incidentes (
   `PdId` bigint DEFAULT NULL,

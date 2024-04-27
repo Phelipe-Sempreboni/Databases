@@ -1,7 +1,11 @@
-# Script 03
+ ------------------------------------------------------------------------------------------------------------- #
+ 
+ -- Script 03
 
-# Cria a tabela
-CREATE TABLE cap08.TB_INCIDENTES_DUP (
+ ------------------------------------------------------------------------------------------------------------- #
+
+ -- Cria a tabela
+CREATE TABLE dsa_module_eight.tb_incidentes_dup (
   `PdId` bigint DEFAULT NULL,
   `IncidntNum` text,
   `Incident Code` text,
@@ -39,89 +43,107 @@ CREATE TABLE cap08.TB_INCIDENTES_DUP (
   `Neighborhoods 2` text
 );
 
-# Carregue o dataset2.csv via MySQL Workbench
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Carregue o dataset2.csv via MySQL Workbench
 
 SELECT PdId, Category
-FROM cap08.TB_INCIDENTES_DUP
+FROM dsa_module_eight.tb_incidentes_dup
 GROUP BY PdId, Category;
 
 SELECT PdId, Category, COUNT(*)
-FROM cap08.TB_INCIDENTES_DUP
+FROM dsa_module_eight.tb_incidentes_dup
 GROUP BY PdId, Category;
 
 SELECT *
-FROM cap08.TB_INCIDENTES_DUP
+FROM dsa_module_eight.tb_incidentes_dup
 WHERE PdId = 11082415274000;
 
-# Identificando os registros duplicados (e retornando uma linha para duplicidade)
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Identificando os registros duplicados (e retornando uma linha para duplicidade)
 SELECT PdId, Category, COUNT(*) AS numero
-FROM cap08.TB_INCIDENTES_DUP
+FROM dsa_module_eight.tb_incidentes_dup
 GROUP BY PdId, Category
 HAVING numero > 1;
 
-# Identificando os registros duplicados (e retornando cada linha em duplicidade)
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Identificando os registros duplicados (e retornando cada linha em duplicidade)
 SELECT PdId, Category
-FROM cap08.TB_INCIDENTES_DUP
-WHERE PdId in (SELECT PdId FROM cap08.TB_INCIDENTES_DUP GROUP BY PdId HAVING COUNT(*) > 1)
+FROM dsa_module_eight.tb_incidentes_dup
+WHERE PdId in (SELECT PdId FROM dsa_module_eight.tb_incidentes_dup GROUP BY PdId HAVING COUNT(*) > 1)
 ORDER BY PdId;
 
-# Identificando os registros duplicados (e retornando uma linha para duplicidade) com função window
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Identificando os registros duplicados (e retornando uma linha para duplicidade) com função window
 SELECT *
 FROM (
  SELECT primeiro_resultado.*,      
         ROW_NUMBER() OVER (PARTITION BY PdId, Category ORDER BY PdId) AS numero
- FROM cap08.TB_INCIDENTES_DUP AS primeiro_resultado) AS segundo_resultado
+ FROM dsa_module_eight.tb_incidentes_dup AS primeiro_resultado) AS segundo_resultado
 WHERE numero > 1;
 
-# Identificando os registros duplicados com CTE
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Identificando os registros duplicados com CTE
 WITH cte_table
 AS
 (
  SELECT PdId, Category, ROW_NUMBER() over(PARTITION BY PdId, Category ORDER BY PdId) AS contagem 
- FROM cap08.TB_INCIDENTES_DUP
+ FROM dsa_module_eight.tb_incidentes_dup
 )
-SELECT * FROM cte_table WHERE contagem > 1
+SELECT * FROM cte_table WHERE contagem > 1;
 
-# Deletando os registros duplicados com CTE
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Deletando os registros duplicados com CTE
 SET SQL_SAFE_UPDATES = 0;
 
 WITH cte_table
 AS
 (
  SELECT PdId, Category, ROW_NUMBER() over(PARTITION BY PdId, Category ORDER BY PdId) AS contagem 
- FROM cap08.TB_INCIDENTES_DUP
+ FROM dsa_module_eight.tb_incidentes_dup
 )
-DELETE FROM cap08.TB_INCIDENTES_DUP 
-USING cap08.TB_INCIDENTES_DUP 
-JOIN cte_table ON cap08.TB_INCIDENTES_DUP.PdId = cte_table.PdId
+DELETE FROM dsa_module_eight.tb_incidentes_dup 
+USING dsa_module_eight.tb_incidentes_dup 
+JOIN cte_table ON dsa_module_eight.tb_incidentes_dup.PdId = cte_table.PdId
 WHERE cte_table.contagem > 1; 
 
 SET SQL_SAFE_UPDATES = 1;
 
-# Deletando os registros duplicados com subquery
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Deletando os registros duplicados com subquery
 SET SQL_SAFE_UPDATES = 0;
 
-DELETE FROM cap08.TB_INCIDENTES_DUP
+DELETE FROM dsa_module_eight.tb_incidentes_dup
 WHERE 
     PdId IN (
     SELECT PdId 
     FROM (
         SELECT                         
             PdId, ROW_NUMBER() OVER (PARTITION BY PdId, Category ORDER BY PdId) AS row_num
-        FROM cap08.TB_INCIDENTES_DUP) alias
+        FROM dsa_module_eight.tb_incidentes_dup) alias
     WHERE row_num > 1
 );
 
-# Cria a tabela
-CREATE TABLE cap08.TB_ALUNOS (
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Cria a tabela
+CREATE TABLE dsa_module_eight.TB_ALUNOS (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     sobrenome VARCHAR(50) NOT NULL, 
     email VARCHAR(255) NOT NULL
 );
 
-# Insere os dados
-INSERT INTO cap08.TB_ALUNOS (nome, sobrenome, email) 
+------------------------------------------------------------------------------------------------------------- #
+
+ -- Insere os dados
+INSERT INTO dsa_module_eight.TB_ALUNOS (nome, sobrenome, email) 
 VALUES ('Carine ','Schmitt','carine.schmitt@verizon.net'),
        ('Jean','King','jean.king@me.com'),
        ('Peter','Ferguson','peter.ferguson@google.com'),
@@ -137,11 +159,15 @@ VALUES ('Carine ','Schmitt','carine.schmitt@verizon.net'),
        ('Susan','Nelson','susan.nelson@comcast.net'),
        ('Roland','Keitel','roland.keitel@yahoo.com');
 
-SELECT * FROM cap08.TB_ALUNOS
+------------------------------------------------------------------------------------------------------------- #
+
+-- Consultas
+
+SELECT * FROM dsa_module_eight.TB_ALUNOS
 ORDER BY email;
 
 SELECT email, COUNT(email) AS contagem
-FROM cap08.TB_ALUNOS
+FROM dsa_module_eight.TB_ALUNOS
 GROUP BY email
 HAVING contagem > 1;
     
@@ -156,8 +182,8 @@ AND n1.email = n2.email
 SET SQL_SAFE_UPDATES = 1;
 
 SELECT email, COUNT(email) AS contagem
-FROM cap08.TB_ALUNOS
+FROM dsa_module_eight.TB_ALUNOS
 GROUP BY email
 HAVING contagem > 1;
 
-
+------------------------------------------------------------------------------------------------------------- #
