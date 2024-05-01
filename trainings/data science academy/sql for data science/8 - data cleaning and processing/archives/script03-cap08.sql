@@ -130,10 +130,12 @@ WHERE
     WHERE row_num > 1
 );
 
+SET SQL_SAFE_UPDATES = 1;
+
 ------------------------------------------------------------------------------------------------------------- #
 
  -- Cria a tabela
-CREATE TABLE dsa_module_eight.TB_ALUNOS (
+CREATE TABLE dsa_module_eight.tb_alunos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50) NOT NULL,
     sobrenome VARCHAR(50) NOT NULL, 
@@ -143,7 +145,7 @@ CREATE TABLE dsa_module_eight.TB_ALUNOS (
 ------------------------------------------------------------------------------------------------------------- #
 
  -- Insere os dados
-INSERT INTO dsa_module_eight.TB_ALUNOS (nome, sobrenome, email) 
+INSERT INTO dsa_module_eight.tb_alunos (nome, sobrenome, email) 
 VALUES ('Carine ','Schmitt','carine.schmitt@verizon.net'),
        ('Jean','King','jean.king@me.com'),
        ('Peter','Ferguson','peter.ferguson@google.com'),
@@ -163,26 +165,26 @@ VALUES ('Carine ','Schmitt','carine.schmitt@verizon.net'),
 
 -- Consultas
 
-SELECT * FROM dsa_module_eight.TB_ALUNOS
+SELECT * FROM dsa_module_eight.tb_alunos
 ORDER BY email;
 
 SELECT email, COUNT(email) AS contagem
-FROM dsa_module_eight.TB_ALUNOS
+FROM dsa_module_eight.tb_alunos
 GROUP BY email
 HAVING contagem > 1;
     
 SET SQL_SAFE_UPDATES = 0;
 
-USE cap08;
+USE dsa_module_eight;
 DELETE n1 
-FROM TB_ALUNOS n1, TB_ALUNOS n2 
+FROM tb_alunos n1, tb_alunos n2 
 WHERE n1.id > n2.id 
-AND n1.email = n2.email
+AND n1.email = n2.email;
 
 SET SQL_SAFE_UPDATES = 1;
 
 SELECT email, COUNT(email) AS contagem
-FROM dsa_module_eight.TB_ALUNOS
+FROM dsa_module_eight.tb_alunos
 GROUP BY email
 HAVING contagem > 1;
 
