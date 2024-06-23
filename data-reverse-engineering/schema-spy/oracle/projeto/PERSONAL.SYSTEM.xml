@@ -1,0 +1,1370 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="PERSONAL" schema="SYSTEM" type="Oracle - Oracle Database 18c Express Edition Release 18.0.0.0.0 - Production&#10;Version 18.4.0.0.0">
+   <tables>
+      <table name="HELP" numRows="980" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="TOPIC" nullable="false" remarks="" size="50" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="SEQ" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="INFO" nullable="true" remarks="" size="80" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="SEQ" sequenceNumberInPK="1"/>
+         <primaryKey column="TOPIC" sequenceNumberInPK="2"/>
+         <index name="HELP_TOPIC_SEQ" unique="true">
+            <column ascending="true" name="TOPIC"/>
+            <column ascending="true" name="SEQ"/>
+         </index>
+      </table>
+      <table name="LOGMNR_LOGMNR_BUILDLOG" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="BUILD_DATE" nullable="true" remarks="" size="20" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="DB_TXN_SCNBAS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="DB_TXN_SCNWRP" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="CURRENT_BUILD_STATE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="COMPLETION_STATUS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="MARKED_LOG_FILE_LOW_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="INITIAL_XID" nullable="false" remarks="" size="22" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="LOGMNR_UID" nullable="true" remarks="" size="22" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="LOGMNR_FLAGS" nullable="true" remarks="" size="22" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="CDB_XID" nullable="true" remarks="" size="22" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="SPARE2" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="INITIAL_XID" sequenceNumberInPK="1"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="2"/>
+         <index name="LOGMNR_LOGMNR_BUILDLOG_s_pk" unique="true">
+            <column ascending="true" name="INITIAL_XID"/>
+            <column ascending="true" name="LOGMNR_UID"/>
+         </index>
+         <index name="LOGMNR_I1LOGMNR_BUILDLOG" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="INITIAL_XID"/>
+         </index>
+      </table>
+      <table name="LOGMNR_SHARD_TS" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="TABLESPACE_NAME" nullable="false" remarks="" size="90" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="CHUNK_NUMBER" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="START_SCNBAS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="START_SCNWRP" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="1"/>
+         <primaryKey column="TABLESPACE_NAME" sequenceNumberInPK="2"/>
+         <index name="LOGMNR_SHARD_TS_s_pk" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="TABLESPACE_NAME"/>
+         </index>
+         <index name="LOGMNR_I1SHARD_TS" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="TABLESPACE_NAME"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_CON_GG" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="CON#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="NAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="COMMIT_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="BASEOBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="BASEOBJV#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="FLAGS" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="INDEXOBJ#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="SPARE3" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="SPARE4" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="SPARE5" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="SPARE6" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="BASEOBJ#" sequenceNumberInPK="1"/>
+         <primaryKey column="BASEOBJV#" sequenceNumberInPK="2"/>
+         <primaryKey column="COMMIT_SCN" sequenceNumberInPK="3"/>
+         <primaryKey column="COMMIT_SCN" sequenceNumberInPK="4"/>
+         <primaryKey column="CON#" sequenceNumberInPK="5"/>
+         <primaryKey column="DROP_SCN" sequenceNumberInPK="6"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="7"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="8"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="9"/>
+         <index name="LOGMNRC_CON_GG_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="CON#"/>
+            <column ascending="true" name="COMMIT_SCN"/>
+         </index>
+         <index name="LOGMNRC_I1CONGG" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="BASEOBJ#"/>
+            <column ascending="true" name="BASEOBJV#"/>
+            <column ascending="true" name="COMMIT_SCN"/>
+         </index>
+         <index name="LOGMNRC_I2CONGG" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="DROP_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_CONCOL_GG" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="CON#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="COMMIT_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="INTCOL#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="POS#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="SPARE3" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="COMMIT_SCN" sequenceNumberInPK="1"/>
+         <primaryKey column="CON#" sequenceNumberInPK="2"/>
+         <primaryKey column="INTCOL#" sequenceNumberInPK="3"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="4"/>
+         <index name="LOGMNRC_CONCOL_GG_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="CON#"/>
+            <column ascending="true" name="COMMIT_SCN"/>
+            <column ascending="true" name="INTCOL#"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_DBNAME_UID_MAP" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="GLOBAL_NAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="LOGMNR_UID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="FLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="PDB_NAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="LOGMNR_MDH" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <primaryKey column="GLOBAL_NAME" sequenceNumberInPK="1"/>
+         <primaryKey column="LOGMNR_MDH" sequenceNumberInPK="2"/>
+         <index name="LOGMNRC_DBNAME_UID_MAP_PK" unique="true">
+            <column ascending="true" name="GLOBAL_NAME"/>
+            <column ascending="true" name="LOGMNR_MDH"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_GSBA" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="AS_OF_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="FDO_LENGTH" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="FDO_VALUE" nullable="true" remarks="" size="255" type="RAW" typeCode="-3"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="CHARSETID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="NCHARSETID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="DBTIMEZONE_LEN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="DBTIMEZONE_VALUE" nullable="true" remarks="" size="192" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="LOGMNR_SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="LOGMNR_SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="LOGMNR_SPARE3" nullable="true" remarks="" size="1000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="LOGMNR_SPARE4" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="DB_GLOBAL_NAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="AS_OF_SCN" sequenceNumberInPK="1"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="2"/>
+         <index name="LOGMNRC_GSBA_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="AS_OF_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_GSII" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="OBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="BO#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="INDTYPE#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="LOGMNR_SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="LOGMNR_SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="LOGMNR_SPARE3" nullable="true" remarks="" size="1000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="LOGMNR_SPARE4" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="1"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="2"/>
+         <index name="LOGMNRC_GSII_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_GTCS" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="OBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="OBJV#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="SEGCOL#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="INTCOL#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="COLNAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="TYPE#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="LENGTH" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="PRECISION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="SCALE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="INTERVAL_LEADING_PRECISION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="INTERVAL_TRAILING_PRECISION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="12" name="PROPERTY" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="TOID" nullable="true" remarks="" size="16" type="RAW" typeCode="-3"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="14" name="CHARSETID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="15" name="CHARSETFORM" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="TYPENAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="FQCOLNAME" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="18" name="NUMINTCOLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="19" name="NUMATTRS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="20" name="ADTORDER" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="21" name="LOGMNR_SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="22" name="LOGMNR_SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="LOGMNR_SPARE3" nullable="true" remarks="" size="1000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="LOGMNR_SPARE4" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="25" name="LOGMNR_SPARE5" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="26" name="LOGMNR_SPARE6" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="27" name="LOGMNR_SPARE7" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="28" name="LOGMNR_SPARE8" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="29" name="LOGMNR_SPARE9" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="30" name="COL#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="31" name="XTYPESCHEMANAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="32" name="XTYPENAME" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="XFQCOLNAME" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="34" name="XTOPINTCOL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="35" name="XREFFEDTABLEOBJN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="36" name="XREFFEDTABLEOBJV" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="37" name="XCOLTYPEFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="38" name="XOPQTYPETYPE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="39" name="XOPQTYPEFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="40" name="XOPQLOBINTCOL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="41" name="XOPQOBJINTCOL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="42" name="XXMLINTCOL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="43" name="EAOWNER#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="44" name="EAMKEYID" nullable="true" remarks="" size="192" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="45" name="EAENCALG" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="46" name="EAINTALG" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="47" name="EACOLKLC" nullable="true" remarks="" size="2000" type="RAW" typeCode="-3"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="48" name="EAKLCLEN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="49" name="EAFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="50" name="LOGMNRDERIVEDFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="51" name="COLLID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="52" name="COLLINTCOL#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="53" name="ACDRRESCOL#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <primaryKey column="INTCOL#" sequenceNumberInPK="1"/>
+         <primaryKey column="INTCOL#" sequenceNumberInPK="2"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="3"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="4"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="5"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="6"/>
+         <primaryKey column="OBJV#" sequenceNumberInPK="7"/>
+         <primaryKey column="OBJV#" sequenceNumberInPK="8"/>
+         <primaryKey column="SEGCOL#" sequenceNumberInPK="9"/>
+         <index name="LOGMNRC_GTCS_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+            <column ascending="true" name="OBJV#"/>
+            <column ascending="true" name="INTCOL#"/>
+         </index>
+         <index name="LOGMNRC_I2GTCS" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+            <column ascending="true" name="OBJV#"/>
+            <column ascending="true" name="SEGCOL#"/>
+            <column ascending="true" name="INTCOL#"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_GTLO" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="KEYOBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="LVLCNT" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="BASEOBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="BASEOBJV#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="LVL1OBJ#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="LVL2OBJ#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="LVL0TYPE#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="LVL1TYPE#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="LVL2TYPE#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="OWNER#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="OWNERNAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="LVL0NAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="LVL1NAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="LVL2NAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="15" name="INTCOLS" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="16" name="COLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="17" name="KERNELCOLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="18" name="TAB_FLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="19" name="TRIGFLAG" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="20" name="ASSOC#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="21" name="OBJ_FLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="22" name="TS#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="TSNAME" nullable="true" remarks="" size="90" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="24" name="PROPERTY" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="25" name="START_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="26" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="27" name="XIDUSN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="28" name="XIDSLT" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="29" name="XIDSQN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="30" name="FLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="31" name="LOGMNR_SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="32" name="LOGMNR_SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="LOGMNR_SPARE3" nullable="true" remarks="" size="1000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="34" name="LOGMNR_SPARE4" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="35" name="LOGMNR_SPARE5" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="36" name="LOGMNR_SPARE6" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="37" name="LOGMNR_SPARE7" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="38" name="LOGMNR_SPARE8" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="39" name="LOGMNR_SPARE9" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="40" name="PARTTYPE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="41" name="SUBPARTTYPE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="42" name="UNSUPPORTEDCOLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="43" name="COMPLEXTYPECOLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="44" name="NTPARENTOBJNUM" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="45" name="NTPARENTOBJVERSION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="46" name="NTPARENTINTCOLNUM" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="47" name="LOGMNRTLOFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="48" name="LOGMNRMCV" nullable="true" remarks="" size="30" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="49" name="ACDRFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="50" name="ACDRTSOBJ#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="51" name="ACDRROWTSINTCOL#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <primaryKey column="BASEOBJ#" sequenceNumberInPK="1"/>
+         <primaryKey column="BASEOBJV#" sequenceNumberInPK="2"/>
+         <primaryKey column="BASEOBJV#" sequenceNumberInPK="3"/>
+         <primaryKey column="DROP_SCN" sequenceNumberInPK="4"/>
+         <primaryKey column="KEYOBJ#" sequenceNumberInPK="5"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="6"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="7"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="8"/>
+         <index name="LOGMNRC_GTLO_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="KEYOBJ#"/>
+            <column ascending="true" name="BASEOBJV#"/>
+         </index>
+         <index name="LOGMNRC_I2GTLO" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="BASEOBJ#"/>
+            <column ascending="true" name="BASEOBJV#"/>
+         </index>
+         <index name="LOGMNRC_I3GTLO" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="DROP_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_IND_GG" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="OBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="NAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="COMMIT_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="BASEOBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="BASEOBJV#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="FLAGS" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="OWNER#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="OWNERNAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="12" name="SPARE3" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="SPARE4" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="SPARE5" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="SPARE6" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="BASEOBJ#" sequenceNumberInPK="1"/>
+         <primaryKey column="BASEOBJV#" sequenceNumberInPK="2"/>
+         <primaryKey column="COMMIT_SCN" sequenceNumberInPK="3"/>
+         <primaryKey column="COMMIT_SCN" sequenceNumberInPK="4"/>
+         <primaryKey column="DROP_SCN" sequenceNumberInPK="5"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="6"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="7"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="8"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="9"/>
+         <index name="LOGMNRC_IND_GG_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+            <column ascending="true" name="COMMIT_SCN"/>
+         </index>
+         <index name="LOGMNRC_I1INDGG" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="BASEOBJ#"/>
+            <column ascending="true" name="BASEOBJV#"/>
+            <column ascending="true" name="COMMIT_SCN"/>
+         </index>
+         <index name="LOGMNRC_I2INDGG" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="DROP_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_INDCOL_GG" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="OBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="COMMIT_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="INTCOL#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="POS#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="SPARE3" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="COMMIT_SCN" sequenceNumberInPK="1"/>
+         <primaryKey column="INTCOL#" sequenceNumberInPK="2"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="3"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="4"/>
+         <index name="LOGMNRC_INDCOL_GG_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+            <column ascending="true" name="COMMIT_SCN"/>
+            <column ascending="true" name="INTCOL#"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_SEQ_GG" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="OBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="COMMIT_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="SEQ_FLAGS" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="OWNER#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="OWNERNAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="OBJNAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="SEQCACHE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="SEQINC" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="SPARE3" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="SPARE4" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="COMMIT_SCN" sequenceNumberInPK="1"/>
+         <primaryKey column="DROP_SCN" sequenceNumberInPK="2"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="3"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="4"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="5"/>
+         <index name="LOGMNRC_SEQ_GG_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+            <column ascending="true" name="COMMIT_SCN"/>
+         </index>
+         <index name="LOGMNRC_I2SEQGG" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="DROP_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_SHARD_TS" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="TABLESPACE_NAME" nullable="false" remarks="" size="90" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="CHUNK_NUMBER" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="START_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="SPARE3" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="DROP_SCN" sequenceNumberInPK="1"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="2"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="3"/>
+         <primaryKey column="START_SCN" sequenceNumberInPK="4"/>
+         <primaryKey column="TABLESPACE_NAME" sequenceNumberInPK="5"/>
+         <index name="LOGMNRC_SHARD_TS_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="TABLESPACE_NAME"/>
+            <column ascending="true" name="START_SCN"/>
+         </index>
+         <index name="LOGMNRC_I1SHARD_TS" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="DROP_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_TS" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="TS#" nullable="false" remarks="" size="22" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="NAME" nullable="true" remarks="" size="90" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="START_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="SPARE3" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="DROP_SCN" sequenceNumberInPK="1"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="2"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="3"/>
+         <primaryKey column="START_SCN" sequenceNumberInPK="4"/>
+         <primaryKey column="TS#" sequenceNumberInPK="5"/>
+         <index name="LOGMNRC_TS_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="TS#"/>
+            <column ascending="true" name="START_SCN"/>
+         </index>
+         <index name="LOGMNRC_I1TS" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="DROP_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRC_TSPART" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="OBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="TS#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="START_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="SPARE3" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="DROP_SCN" sequenceNumberInPK="1"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="2"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="3"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="4"/>
+         <primaryKey column="START_SCN" sequenceNumberInPK="5"/>
+         <index name="LOGMNRC_TSPART_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+            <column ascending="true" name="START_SCN"/>
+         </index>
+         <index name="LOGMNRC_I1TSPART" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="DROP_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRGGC_GTCS" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="OBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="OBJV#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="SEGCOL#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="INTCOL#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="COLNAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="TYPE#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="LENGTH" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="PRECISION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="SCALE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="INTERVAL_LEADING_PRECISION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="INTERVAL_TRAILING_PRECISION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="12" name="PROPERTY" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="TOID" nullable="true" remarks="" size="16" type="RAW" typeCode="-3"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="14" name="CHARSETID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="15" name="CHARSETFORM" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="TYPENAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="FQCOLNAME" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="18" name="NUMINTCOLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="19" name="NUMATTRS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="20" name="ADTORDER" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="21" name="LOGMNR_SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="22" name="LOGMNR_SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="LOGMNR_SPARE3" nullable="true" remarks="" size="1000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="LOGMNR_SPARE4" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="25" name="LOGMNR_SPARE5" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="26" name="LOGMNR_SPARE6" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="27" name="LOGMNR_SPARE7" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="28" name="LOGMNR_SPARE8" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="29" name="LOGMNR_SPARE9" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="30" name="COL#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="31" name="XTYPESCHEMANAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="32" name="XTYPENAME" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="XFQCOLNAME" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="34" name="XTOPINTCOL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="35" name="XREFFEDTABLEOBJN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="36" name="XREFFEDTABLEOBJV" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="37" name="XCOLTYPEFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="38" name="XOPQTYPETYPE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="39" name="XOPQTYPEFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="40" name="XOPQLOBINTCOL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="41" name="XOPQOBJINTCOL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="42" name="XXMLINTCOL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="43" name="EAOWNER#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="44" name="EAMKEYID" nullable="true" remarks="" size="192" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="45" name="EAENCALG" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="46" name="EAINTALG" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="47" name="EACOLKLC" nullable="true" remarks="" size="2000" type="RAW" typeCode="-3"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="48" name="EAKLCLEN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="49" name="EAFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="50" name="LOGMNRDERIVEDFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="51" name="COLLID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="52" name="COLLINTCOL#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="53" name="ACDRRESCOL#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <primaryKey column="INTCOL#" sequenceNumberInPK="1"/>
+         <primaryKey column="INTCOL#" sequenceNumberInPK="2"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="3"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="4"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="5"/>
+         <primaryKey column="OBJ#" sequenceNumberInPK="6"/>
+         <primaryKey column="OBJV#" sequenceNumberInPK="7"/>
+         <primaryKey column="OBJV#" sequenceNumberInPK="8"/>
+         <primaryKey column="SEGCOL#" sequenceNumberInPK="9"/>
+         <index name="LOGMNRGGC_GTCS_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+            <column ascending="true" name="OBJV#"/>
+            <column ascending="true" name="INTCOL#"/>
+         </index>
+         <index name="LOGMNRGGC_I2GTCS" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="OBJ#"/>
+            <column ascending="true" name="OBJV#"/>
+            <column ascending="true" name="SEGCOL#"/>
+            <column ascending="true" name="INTCOL#"/>
+         </index>
+      </table>
+      <table name="LOGMNRGGC_GTLO" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="KEYOBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="LVLCNT" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="BASEOBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="BASEOBJV#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="LVL1OBJ#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="LVL2OBJ#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="LVL0TYPE#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="LVL1TYPE#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="LVL2TYPE#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="OWNER#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="OWNERNAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="LVL0NAME" nullable="false" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="LVL1NAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="LVL2NAME" nullable="true" remarks="" size="384" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="15" name="INTCOLS" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="16" name="COLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="17" name="KERNELCOLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="18" name="TAB_FLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="19" name="TRIGFLAG" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="20" name="ASSOC#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="21" name="OBJ_FLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="22" name="TS#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="TSNAME" nullable="true" remarks="" size="90" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="24" name="PROPERTY" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="25" name="START_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="26" name="DROP_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="27" name="XIDUSN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="28" name="XIDSLT" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="29" name="XIDSQN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="30" name="FLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="31" name="LOGMNR_SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="32" name="LOGMNR_SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="LOGMNR_SPARE3" nullable="true" remarks="" size="1000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="34" name="LOGMNR_SPARE4" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="35" name="LOGMNR_SPARE5" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="36" name="LOGMNR_SPARE6" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="37" name="LOGMNR_SPARE7" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="38" name="LOGMNR_SPARE8" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="39" name="LOGMNR_SPARE9" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="40" name="PARTTYPE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="41" name="SUBPARTTYPE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="42" name="UNSUPPORTEDCOLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="43" name="COMPLEXTYPECOLS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="44" name="NTPARENTOBJNUM" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="45" name="NTPARENTOBJVERSION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="46" name="NTPARENTINTCOLNUM" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="47" name="LOGMNRTLOFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="48" name="LOGMNRMCV" nullable="true" remarks="" size="30" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="49" name="ACDRFLAGS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="50" name="ACDRTSOBJ#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="51" name="ACDRROWTSINTCOL#" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <primaryKey column="BASEOBJ#" sequenceNumberInPK="1"/>
+         <primaryKey column="BASEOBJV#" sequenceNumberInPK="2"/>
+         <primaryKey column="BASEOBJV#" sequenceNumberInPK="3"/>
+         <primaryKey column="DROP_SCN" sequenceNumberInPK="4"/>
+         <primaryKey column="KEYOBJ#" sequenceNumberInPK="5"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="6"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="7"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="8"/>
+         <index name="LOGMNRGGC_GTLO_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="KEYOBJ#"/>
+            <column ascending="true" name="BASEOBJV#"/>
+         </index>
+         <index name="LOGMNRGGC_I2GTLO" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="BASEOBJ#"/>
+            <column ascending="true" name="BASEOBJV#"/>
+         </index>
+         <index name="LOGMNRGGC_I3GTLO" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="DROP_SCN"/>
+         </index>
+      </table>
+      <table name="LOGMNRP_CTAS_PART_MAP" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="LOGMNR_UID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="BASEOBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="BASEOBJV#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="KEYOBJ#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="PART#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="SPARE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="SPARE3" nullable="true" remarks="" size="1000" type="VARCHAR2" typeCode="12"/>
+         <primaryKey column="BASEOBJ#" sequenceNumberInPK="1"/>
+         <primaryKey column="BASEOBJV#" sequenceNumberInPK="2"/>
+         <primaryKey column="BASEOBJV#" sequenceNumberInPK="3"/>
+         <primaryKey column="KEYOBJ#" sequenceNumberInPK="4"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="5"/>
+         <primaryKey column="LOGMNR_UID" sequenceNumberInPK="6"/>
+         <primaryKey column="PART#" sequenceNumberInPK="7"/>
+         <index name="LOGMNRP_CTAS_PART_MAP_PK" unique="true">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="BASEOBJV#"/>
+            <column ascending="true" name="KEYOBJ#"/>
+         </index>
+         <index name="LOGMNRP_CTAS_PART_MAP_I" unique="false">
+            <column ascending="true" name="LOGMNR_UID"/>
+            <column ascending="true" name="BASEOBJ#"/>
+            <column ascending="true" name="BASEOBJV#"/>
+            <column ascending="true" name="PART#"/>
+         </index>
+      </table>
+      <table name="MVIEW_EVALUATIONS" numRows="0" remarks="This view gives DBA access to summary evaluation output" schema="SYSTEM" type="VIEW" viewSql="select&#10;  t1.runid# as runid,&#10;  summary_owner AS mview_owner,&#10;  summary_name AS mview_name,&#10;  rank# as rank,&#10;  storage_in_bytes,&#10;  frequency,&#10;  cumulative_benefit,&#10;  benefit_to_cost_ratio&#10;from SYSTEM.MVIEW$_ADV_OUTPUT t1, SYSTEM.MVIEW$_ADV_LOG t2, ALL_USERS u&#10;where&#10;  t1.runid# = t2.runid# and&#10;  u.username = t2.uname and&#10;  u.user_id = userenv('SCHEMAID') and&#10;  t1.output_type = 1&#10;order by t1.rank#">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="RUNID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="MVIEW_OWNER" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="MVIEW_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="RANK" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="STORAGE_IN_BYTES" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="FREQUENCY" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="CUMULATIVE_BENEFIT" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="BENEFIT_TO_COST_RATIO" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+      </table>
+      <table name="MVIEW_EXCEPTIONS" numRows="0" remarks="This view gives DBA access to dimension validation results" schema="SYSTEM" type="VIEW" viewSql="select&#10;  t1.runid# as runid,&#10;  owner,&#10;  table_name,&#10;  dimension_name,&#10;  relationship,&#10;  bad_rowid&#10;from SYSTEM.MVIEW$_ADV_EXCEPTIONS t1, SYSTEM.MVIEW$_ADV_LOG t2, ALL_USERS u&#10;where&#10;  t1.runid# = t2.runid# and&#10;  u.username = t2.uname and&#10;  u.user_id = userenv('SCHEMAID')">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="RUNID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="OWNER" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="TABLE_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="DIMENSION_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="RELATIONSHIP" nullable="true" remarks="" size="11" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="BAD_ROWID" nullable="true" remarks="" size="10" type="ROWID" typeCode="-8"/>
+      </table>
+      <table name="MVIEW_FILTER" numRows="0" remarks="Workload filter records" schema="SYSTEM" type="VIEW" viewSql="select&#10;      a.filterid# as filterid,&#10;      a.subfilternum# as subfilternum,&#10;      decode(a.subfiltertype,1,'APPLICATION',2,'CARDINALITY',3,'LASTUSE',&#10;                             4,'FREQUENCY',5,'USER',6,'PRIORITY',7,'BASETABLE',&#10;                             8,'RESPONSETIME',9,'COLLECTIONID',10,'TRACENAME',&#10;                             11,'SCHEMA','UNKNOWN') AS subfiltertype,&#10;      a.str_value,&#10;      to_number(decode(a.num_value1,-999,NULL,a.num_value1)) AS num_value1,&#10;      to_number(decode(a.num_value2,-999,NULL,a.num_value2)) AS num_value2,&#10;      a.date_value1,&#10;      a.date_value2&#10;   from system.mview$_adv_filter a, system.mview$_adv_log b, ALL_USERS u&#10;   WHERE a.filterid# = b.runid#&#10;   AND b.uname = u.username&#10;   AND u.user_id = userenv('SCHEMAID')">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="FILTERID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="SUBFILTERNUM" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="SUBFILTERTYPE" nullable="true" remarks="" size="12" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="STR_VALUE" nullable="true" remarks="" size="1028" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="NUM_VALUE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="NUM_VALUE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="DATE_VALUE1" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="DATE_VALUE2" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+      </table>
+      <table name="MVIEW_FILTERINSTANCE" numRows="0" remarks="Workload filter instance records" schema="SYSTEM" type="VIEW" viewSql="select&#10;      a.runid# as runid,&#10;      a.filterid# as filterid,&#10;      a.subfilternum# as subfilternum,&#10;      decode(a.subfiltertype,1,'APPLICATION',2,'CARDINALITY',3,'LASTUSE',&#10;                             4,'FREQUENCY',5,'USER',6,'PRIORITY',7,'BASETABLE',&#10;                             8,'RESPONSETIME',9,'COLLECTIONID',10,'TRACENAME',&#10;                             11,'SCHEMA','UNKNOWN') AS subfiltertype,&#10;      a.str_value,&#10;      to_number(decode(a.num_value1,-999,NULL,a.num_value1)) AS num_value1,&#10;      to_number(decode(a.num_value2,-999,NULL,a.num_value2)) AS num_value2,&#10;      a.date_value1,&#10;      a.date_value2&#10;   from system.mview$_adv_filterinstance a">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="RUNID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="FILTERID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="SUBFILTERNUM" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="SUBFILTERTYPE" nullable="true" remarks="" size="12" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="STR_VALUE" nullable="true" remarks="" size="1028" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="NUM_VALUE1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="NUM_VALUE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="DATE_VALUE1" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="DATE_VALUE2" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+      </table>
+      <table name="MVIEW_LOG" numRows="0" remarks="Advisor session log" schema="SYSTEM" type="VIEW" viewSql="select&#10;      m.runid# as id,&#10;      m.filterid# as filterid,&#10;      m.run_begin,&#10;      m.run_end,&#10;      decode(m.run_type,1,'EVALUATE',2,'EVALUATE_W',3,'RECOMMEND',&#10;                      4,'RECOMMEND_W',5,'VALIDATE',6,'WORKLOAD',&#10;                      7,'FILTER','UNKNOWN') AS type,&#10;      decode(m.status,0,'UNUSED',1,'CANCELLED',2,'IN_PROGRESS',3,'COMPLETED',&#10;                    4,'ERROR','UNKNOWN') AS status,&#10;      m.message,&#10;      m.completed,&#10;      m.total,&#10;      m.error_code&#10;   from system.mview$_adv_log m, all_users u&#10;   where m.uname = u.username&#10;   and   u.user_id = userenv('SCHEMAID')">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="ID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="1" name="FILTERID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="RUN_BEGIN" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="RUN_END" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="TYPE" nullable="true" remarks="" size="11" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="STATUS" nullable="true" remarks="" size="11" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="MESSAGE" nullable="true" remarks="" size="2000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="COMPLETED" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="TOTAL" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="ERROR_CODE" nullable="true" remarks="" size="20" type="VARCHAR2" typeCode="12"/>
+      </table>
+      <table name="MVIEW_RECOMMENDATIONS" numRows="0" remarks="This view gives DBA access to summary recommendations" schema="SYSTEM" type="VIEW" viewSql="select&#10;  t1.runid# as runid,&#10;  t1.from_clause as all_tables,&#10;  fact_tables,&#10;  grouping_levels,&#10;  query_text,&#10;  rank# as recommendation_number,&#10;  action_type as recommended_action,&#10;  summary_owner as mview_owner,&#10;  summary_name as mview_name,&#10;  storage_in_bytes,&#10;  pct_performance_gain,&#10;  benefit_to_cost_ratio&#10;from SYSTEM.MVIEW$_ADV_OUTPUT t1, SYSTEM.MVIEW$_ADV_LOG t2, ALL_USERS u&#10;where&#10;  t1.runid# = t2.runid# and&#10;  u.username = t2.uname and&#10;  u.user_id = userenv('SCHEMAID') and&#10;  t1.output_type = 0&#10;order by t1.rank#">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="RUNID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="ALL_TABLES" nullable="true" remarks="" size="2000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="FACT_TABLES" nullable="true" remarks="" size="1000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="GROUPING_LEVELS" nullable="true" remarks="" size="2000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="QUERY_TEXT" nullable="true" remarks="" size="0" type="LONG" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="RECOMMENDATION_NUMBER" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="RECOMMENDED_ACTION" nullable="true" remarks="" size="6" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="MVIEW_OWNER" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="MVIEW_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="STORAGE_IN_BYTES" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="PCT_PERFORMANCE_GAIN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="BENEFIT_TO_COST_RATIO" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+      </table>
+      <table name="MVIEW_WORKLOAD" numRows="0" remarks="This view gives DBA access to shared workload" schema="SYSTEM" type="VIEW" viewSql="select&#10;  a.collectionid# as workloadid,&#10;  a.collecttime as import_time,&#10;  a.queryid# as queryid,&#10;  a.application,&#10;  a.cardinality,&#10;  a.resultsize,&#10;  a.qdate as lastuse,&#10;  a.frequency,&#10;  a.uname as owner,&#10;  a.priority,&#10;  a.sql_text as query,&#10;  a.exec_time as responsetime&#10;from SYSTEM.MVIEW$_ADV_WORKLOAD A, SYSTEM.MVIEW$_ADV_LOG B, ALL_USERS D&#10;WHERE a.collectionid# = b.runid#&#10;AND b.uname = d.username&#10;AND d.user_id = userenv('SCHEMAID')">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="WORKLOADID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="IMPORT_TIME" nullable="false" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="QUERYID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="APPLICATION" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="CARDINALITY" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="RESULTSIZE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="LASTUSE" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="FREQUENCY" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="OWNER" nullable="false" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="PRIORITY" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="QUERY" nullable="false" remarks="" size="0" type="LONG" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="RESPONSETIME" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+      </table>
+      <table name="PRODUCT_PRIVS" numRows="0" remarks="" schema="SYSTEM" type="VIEW" viewSql="SELECT PRODUCT, USERID, ATTRIBUTE, SCOPE,&#10;         NUMERIC_VALUE, CHAR_VALUE, DATE_VALUE, LONG_VALUE&#10;  FROM SQLPLUS_PRODUCT_PROFILE&#10;  WHERE USERID = 'PUBLIC' OR&#10;        USERID LIKE SYS_CONTEXT('USERENV','CURRENT_USER')">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="PRODUCT" nullable="false" remarks="" size="30" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="USERID" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ATTRIBUTE" nullable="true" remarks="" size="240" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="SCOPE" nullable="true" remarks="" size="240" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="4" name="NUMERIC_VALUE" nullable="true" remarks="" size="15" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="CHAR_VALUE" nullable="true" remarks="" size="240" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="DATE_VALUE" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="LONG_VALUE" nullable="true" remarks="" size="0" type="LONG" typeCode="-1"/>
+      </table>
+      <table name="REDO_DB" numRows="1" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="DBID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="GLOBAL_DBNAME" nullable="true" remarks="" size="129" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="DBUNAME" nullable="true" remarks="" size="32" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="VERSION" nullable="true" remarks="" size="32" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="THREAD#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="RESETLOGS_SCN_BAS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="RESETLOGS_SCN_WRP" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="RESETLOGS_TIME" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="PRESETLOGS_SCN_BAS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="PRESETLOGS_SCN_WRP" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="PRESETLOGS_TIME" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="SEQNO_RCV_CUR" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="12" name="SEQNO_RCV_LO" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="13" name="SEQNO_RCV_HI" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="14" name="SEQNO_DONE_CUR" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="15" name="SEQNO_DONE_LO" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="16" name="SEQNO_DONE_HI" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="17" name="GAP_SEQNO" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="18" name="GAP_RET" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="19" name="GAP_DONE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="20" name="APPLY_SEQNO" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="21" name="APPLY_DONE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="22" name="PURGE_DONE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="23" name="HAS_CHILD" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="24" name="ERROR1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="25" name="STATUS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="CREATE_DATE" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="27" name="TS1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="28" name="TS2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="29" name="GAP_NEXT_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="30" name="GAP_NEXT_TIME" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="31" name="CURSCN_TIME" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="32" name="RESETLOGS_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="33" name="PRESETLOGS_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="34" name="GAP_RET2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="35" name="CURLOG" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="36" name="ENDIAN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="37" name="ENQIDX" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="38" name="SPARE4" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="39" name="SPARE5" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="40" name="SPARE6" nullable="true" remarks="" size="65" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="41" name="SPARE7" nullable="true" remarks="" size="129" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="42" name="TS3" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="43" name="CURBLKNO" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="44" name="SPARE8" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="45" name="SPARE9" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="46" name="SPARE10" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="47" name="SPARE11" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="48" name="SPARE12" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <index name="REDO_DB_IDX" unique="false">
+            <column ascending="true" name="DBID"/>
+            <column ascending="true" name="THREAD#"/>
+            <column ascending="true" name="RESETLOGS_SCN"/>
+            <column ascending="true" name="RESETLOGS_TIME"/>
+         </index>
+      </table>
+      <table name="REDO_LOG" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="0" name="DBID" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="GLOBAL_DBNAME" nullable="true" remarks="" size="129" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="DBUNAME" nullable="true" remarks="" size="32" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="VERSION" nullable="true" remarks="" size="32" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="4" name="THREAD#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="5" name="RESETLOGS_SCN_BAS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="6" name="RESETLOGS_SCN_WRP" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="7" name="RESETLOGS_TIME" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="8" name="PRESETLOGS_SCN_BAS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="9" name="PRESETLOGS_SCN_WRP" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="10" name="PRESETLOGS_TIME" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="11" name="SEQUENCE#" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="12" name="DUPID" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="13" name="STATUS1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="14" name="STATUS2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="CREATE_TIME" nullable="true" remarks="" size="32" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="CLOSE_TIME" nullable="true" remarks="" size="32" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="DONE_TIME" nullable="true" remarks="" size="32" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="18" name="FIRST_SCN_BAS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="19" name="FIRST_SCN_WRP" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="20" name="FIRST_TIME" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="21" name="NEXT_SCN_BAS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="22" name="NEXT_SCN_WRP" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="23" name="NEXT_TIME" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="24" name="FIRST_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="25" name="NEXT_SCN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="26" name="RESETLOGS_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="27" name="BLOCKS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="28" name="BLOCK_SIZE" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="29" name="OLD_BLOCKS" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="30" name="CREATE_DATE" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="31" name="ERROR1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="32" name="ERROR2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="33" name="FILENAME" nullable="true" remarks="" size="513" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="34" name="TS1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="35" name="TS2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="36" name="ENDIAN" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="37" name="SPARE2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="38" name="SPARE3" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="39" name="SPARE4" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="40" name="SPARE5" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="41" name="SPARE6" nullable="true" remarks="" size="65" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="42" name="SPARE7" nullable="true" remarks="" size="129" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="43" name="TS3" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="44" name="PRESETLOGS_SCN" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="45" name="SPARE8" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="46" name="SPARE9" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="47" name="SPARE10" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="48" name="OLD_STATUS1" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="49" name="OLD_STATUS2" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="50" name="OLD_FILENAME" nullable="true" remarks="" size="513" type="VARCHAR2" typeCode="12"/>
+         <index name="REDO_LOG_IDX" unique="false">
+            <column ascending="true" name="DBID"/>
+            <column ascending="true" name="THREAD#"/>
+            <column ascending="true" name="RESETLOGS_SCN"/>
+            <column ascending="true" name="RESETLOGS_TIME"/>
+         </index>
+      </table>
+      <table name="SCHEDULER_JOB_ARGS" numRows="0" remarks="" schema="SYSTEM" type="VIEW" viewSql="SELECT &quot;OWNER&quot;,&quot;JOB_NAME&quot;,&quot;ARGUMENT_NAME&quot;,&quot;ARGUMENT_POSITION&quot;,&quot;ARGUMENT_TYPE&quot;,&quot;VALUE&quot;,&quot;ANYDATA_VALUE&quot;,&quot;OUT_ARGUMENT&quot; FROM sys.all_scheduler_job_args">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="OWNER" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="JOB_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ARGUMENT_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="ARGUMENT_POSITION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ARGUMENT_TYPE" nullable="true" remarks="" size="257" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="VALUE" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ANYDATA_VALUE" nullable="true" remarks="" size="64" type="ANYDATA" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="OUT_ARGUMENT" nullable="true" remarks="" size="5" type="VARCHAR2" typeCode="12"/>
+      </table>
+      <table name="SCHEDULER_JOB_ARGS_TBL" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="OWNER" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="JOB_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ARGUMENT_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="ARGUMENT_POSITION" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ARGUMENT_TYPE" nullable="true" remarks="" size="257" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="VALUE" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="ANYDATA_VALUE" nullable="true" remarks="" size="3752" type="ANYDATA" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="OUT_ARGUMENT" nullable="true" remarks="" size="5" type="VARCHAR2" typeCode="12"/>
+      </table>
+      <table name="SCHEDULER_PROGRAM_ARGS" numRows="0" remarks="" schema="SYSTEM" type="VIEW" viewSql="SELECT &quot;OWNER&quot;,&quot;PROGRAM_NAME&quot;,&quot;ARGUMENT_NAME&quot;,&quot;ARGUMENT_POSITION&quot;,&quot;ARGUMENT_TYPE&quot;,&quot;METADATA_ATTRIBUTE&quot;,&quot;DEFAULT_VALUE&quot;,&quot;DEFAULT_ANYDATA_VALUE&quot;,&quot;OUT_ARGUMENT&quot; FROM sys.all_scheduler_program_args">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="OWNER" nullable="false" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="PROGRAM_NAME" nullable="false" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ARGUMENT_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="ARGUMENT_POSITION" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ARGUMENT_TYPE" nullable="true" remarks="" size="257" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="METADATA_ATTRIBUTE" nullable="true" remarks="" size="19" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="DEFAULT_VALUE" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="DEFAULT_ANYDATA_VALUE" nullable="true" remarks="" size="4408" type="ANYDATA" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="OUT_ARGUMENT" nullable="true" remarks="" size="5" type="VARCHAR2" typeCode="12"/>
+      </table>
+      <table name="SCHEDULER_PROGRAM_ARGS_TBL" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="OWNER" nullable="false" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="PROGRAM_NAME" nullable="false" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ARGUMENT_NAME" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="3" name="ARGUMENT_POSITION" nullable="false" remarks="" size="0" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="ARGUMENT_TYPE" nullable="true" remarks="" size="257" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="METADATA_ATTRIBUTE" nullable="true" remarks="" size="19" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="DEFAULT_VALUE" nullable="true" remarks="" size="4000" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="DEFAULT_ANYDATA_VALUE" nullable="true" remarks="" size="3752" type="ANYDATA" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="OUT_ARGUMENT" nullable="true" remarks="" size="5" type="VARCHAR2" typeCode="12"/>
+      </table>
+      <table name="SQLPLUS_PRODUCT_PROFILE" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="PRODUCT" nullable="false" remarks="" size="30" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="USERID" nullable="true" remarks="" size="128" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="ATTRIBUTE" nullable="true" remarks="" size="240" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="SCOPE" nullable="true" remarks="" size="240" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="2" id="4" name="NUMERIC_VALUE" nullable="true" remarks="" size="15" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="CHAR_VALUE" nullable="true" remarks="" size="240" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="DATE_VALUE" nullable="true" remarks="" size="7" type="DATE" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="LONG_VALUE" nullable="true" remarks="" size="0" type="LONG" typeCode="-1"/>
+      </table>
+      <table name="TBL_CADASTRO_CLIENTES" numRows="35" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="CPF" nullable="true" remarks="" size="11" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="NOME_COMPLETO" nullable="true" remarks="" size="150" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="RUA" nullable="true" remarks="" size="100" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="BAIRRO" nullable="true" remarks="" size="100" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="CIDADE" nullable="true" remarks="" size="60" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="ESTADO" nullable="true" remarks="" size="5" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="CEP" nullable="true" remarks="" size="10" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="IDADE" nullable="true" remarks="" size="38" type="NUMBER" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="SEXO" nullable="true" remarks="" size="20" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="LIMITE_CREDITO_COMPRA" nullable="true" remarks="" size="126" type="FLOAT" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="VOLUME_MINIMO_COMPRA" nullable="true" remarks="" size="126" type="FLOAT" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="PRIMEIRA_COMPRA" nullable="true" remarks="" size="1" type="NUMBER" typeCode="2"/>
+      </table>
+      <table name="TBL_PRODUTOS" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="PRODUTO" nullable="true" remarks="" size="100" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="NOME" nullable="true" remarks="" size="150" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="EMBALAGEM" nullable="true" remarks="" size="50" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="TAMANHO" nullable="true" remarks="" size="50" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="SABOR" nullable="true" remarks="" size="50" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="PRECO_LISTA" nullable="true" remarks="" size="126" type="FLOAT" typeCode="6"/>
+      </table>
+      <table name="TBL_VENDEDORES" numRows="0" remarks="" schema="SYSTEM" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="MATRICULA" nullable="true" remarks="" size="10" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="NOME" nullable="true" remarks="" size="150" type="VARCHAR2" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="-127" id="2" name="COMISSAO" nullable="true" remarks="" size="0" type="NUMBER" typeCode="2"/>
+      </table>
+   </tables>
+   <routines>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$COL_GG_REC" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[type        LOGMNR$COL_GG_REC as object
+(
+LOGMNR_UID NUMBER,
+OBJ# NUMBER,
+MD_COL_NAME VARCHAR2(384),
+MD_COL_NUM NUMBER,                 /* col# */
+MD_COL_SEGCOL NUMBER,              /* segcol# */
+MD_COL_TYPE NUMBER,                /* type# */
+MD_COL_LEN NUMBER,
+MD_COL_PREC NUMBER,                /* precision */
+MD_COL_SCALE NUMBER,
+MD_COL_CHARSETID NUMBER,           /* character set id */
+MD_COL_CHARSETFORM NUMBER,         /* character set form */
+MD_COL_ALT_TYPE VARCHAR2(4000),    /* adt type if any */
+MD_COL_ALT_PREC NUMBER,            /* precision of the adt attribute */
+MD_COL_ALT_CHAR_USED VARCHAR2(2),  /* charset used by the adt attribute */
+MD_COL_ALT_LENGTH NUMBER,          /* length of the adt attribute */
+MD_COL_ALT_XML_TYPE NUMBER,        /* 0/1. is xml_type column */
+MD_COL_ALT_BINARYXML_TYPE NUMBER,  /* 0/1. is xml_type stored as binary */
+MD_COL_ENC_ISENC VARCHAR2(3) ,     /* 'YES'/'NO' */
+MD_COL_ENC_NOSALT VARCHAR2(3) ,    /* 'YES'/'NO' */
+MD_COL_ENC_ISLOB VARCHAR2(3) ,     /* 'YES'/'NO' */
+MD_COL_ALT_OBJECTXML_TYPE NUMBER,  /* 0/1 xml_type stored as object */
+MD_COL_HASNOTNULLDEFAULT VARCHAR2(3) ,   /* 'YES'/'NO' */
+MD_COL_ALT_TYPE_OWNER VARCHAR2(384),  /* owner of the adt type if any */
+PROPERTY NUMBER,
+XCOLTYPEFLAGS NUMBER,
+XOPQTYPEFLAGS NUMBER,
+EAFLAGS NUMBER,
+XFQCOLNAME VARCHAR2(4000),
+SPARE1  NUMBER,
+SPARE2  NUMBER,
+SPARE3  NUMBER,
+SPARE4  VARCHAR2(4000),
+SPARE5  VARCHAR2(4000),
+SPARE6  VARCHAR2(4000),
+/* Following fields added in 12.1.0.2 */
+OBJV# NUMBER,
+INTCOL# NUMBER,
+INTERVAL_LEADING_PRECISION NUMBER,
+INTERVAL_TRAILING_PRECISION NUMBER,
+TOID RAW(16),
+TYPENAME VARCHAR2(384),
+NUMINTCOLS NUMBER,
+NUMATTRS NUMBER,
+ADTORDER NUMBER,
+LOGMNR_SPARE1 NUMBER,
+LOGMNR_SPARE2 NUMBER,
+LOGMNR_SPARE3 VARCHAR2(1000),
+LOGMNR_SPARE4 DATE,
+LOGMNR_SPARE5 NUMBER,
+LOGMNR_SPARE6 NUMBER,
+LOGMNR_SPARE7 NUMBER,
+LOGMNR_SPARE8 NUMBER,
+LOGMNR_SPARE9 NUMBER,
+XTYPENAME VARCHAR2(4000),
+XTOPINTCOL NUMBER,
+XREFFEDTABLEOBJN NUMBER,
+XREFFEDTABLEOBJV NUMBER,
+XOPQTYPETYPE NUMBER,
+XOPQLOBINTCOL NUMBER,
+XOPQOBJINTCOL NUMBER,
+XXMLINTCOL    NUMBER,
+LOGMNRDERIVEDFLAGS NUMBER,
+/* Following fields added in 12.2 */
+COLLID      NUMBER,
+COLLINTCOL#  NUMBER,
+ACDRRESCOL# NUMBER
+);]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$COL_GG_RECS" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[TYPE        LOGMNR$COL_GG_RECS AS TABLE OF  SYSTEM.LOGMNR$COL_GG_REC;]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$COL_GG_TABF_PUBLIC" returnType="TABLE" type="FUNCTION">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[FUNCTION        LOGMNR$COL_GG_TABF_PUBLIC wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+237 185
+nkvJV1w6wH1y7mRApzf9mGuebNUwgxDILkhGfHQCmP8+Vi4fyqh3SG1Fyq+pCts1OlgnK761
+YuzKBA4JE5DNwZzBIF/Y4ZM5eUlquVyTkOg+AodK3vQJt9NLvPITXbP42O37gO+zKr4BQEJk
+ypwrP1U/Pf6MLZONN8LUaVqHCN87T14HqHs5taX7LhLXQ2lCVBE1Ll8dyB9CDOlbyvQS/lrb
++0n1pQi9IJAWySL85ChAqnTaqFJm0YeToD4lZ8UUPQqIZNoX0x73WK9OzsmdBrvEC97iduxe
+PEXVkxF6xklPod6yOGBvW7DAFMBgf+LajDLVKOAwB2EAiKCXYMuTUTtMYYkCFFf4sj1rCpsj
+TLth6TSru530aM2HP6bEbm3m
+]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$GSBA_GG_REC" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[TYPE        LOGMNR$GSBA_GG_REC AS OBJECT
+(
+LOGMNR_UID NUMBER,
+NAME           VARCHAR2(384),
+VALUE          VARCHAR2(4000),
+LOGMNR_SPARE1  NUMBER,
+LOGMNR_SPARE2  NUMBER,
+LOGMNR_SPARE3  VARCHAR2(4000),
+LOGMNR_SPARE4  DATE
+);]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$GSBA_GG_RECS" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[TYPE        LOGMNR$GSBA_GG_RECS AS TABLE OF  SYSTEM.LOGMNR$GSBA_GG_REC;]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$GSBA_GG_TABF_PUBLIC" returnType="TABLE" type="FUNCTION">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[FUNCTION        LOGMNR$GSBA_GG_TABF_PUBLIC wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+206 171
+6gxi/CQwK1I5Rfwuw/SXrOGpVRYwgwLI1yfbfHRGEjNe54OE4QwRZCoA20oG536tzgcBrj+1
+xE3tE8jIhAoTlUdUmkdYMmZycO1SdiJZwwt/6BrM1wHXl/E5+3Ip2NXzC9j8v4+KjkD9d5AT
+p05eEsEWjU1CBTMSpjZZrXzbgFl9QNnQ+zJGjSug21f76ajs78m6anxz7vFcTcem6XpAgKjc
+EXzd/ijP8qiOqwblTfnXcRslJn3MljD02u+5fh9NBctOmnaw/tOjRCFPUhY8I9gCoMptjG7U
+rHEIFzHOFyxBEdulRGq4ngSgcm7l2yOdSHgNM8rO2vUH4gozvJoLE1S8GBBzG/wrvHPhACQ/
+2w==
+]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$KEY_GG_REC" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[type        LOGMNR$KEY_GG_REC as object
+(
+LOGMNR_UID NUMBER,
+KEY# NUMBER,                   /* index obj# or con# */
+KEY_FLAGS NUMBER,              /* index or constraint */
+KEY_NAME VARCHAR2(384),        /* index name or constraint name */
+INDEX_OWNER# NUMBER,
+INDEX_OWNERNAME VARCHAR2(384),
+COLNAME VARCHAR2(384),
+INTCOL# NUMBER,
+which number,
+KEY_ORDER VARCHAR2(10),              /* asc or desc */
+KEYCOL_FLAGS NUMBER,           /* Column properties such as is_null */
+SPARE1  NUMBER,
+SPARE2  NUMBER,
+SPARE3  NUMBER,
+SPARE4  VARCHAR2(4000),
+SPARE5  VARCHAR2(4000),
+SPARE6  VARCHAR2(4000)
+);]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$KEY_GG_RECS" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[TYPE        LOGMNR$KEY_GG_RECS AS TABLE OF  SYSTEM.LOGMNR$KEY_GG_REC;]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$KEY_GG_TABF_PUBLIC" returnType="TABLE" type="FUNCTION">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[FUNCTION        LOGMNR$KEY_GG_TABF_PUBLIC wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+2a0 1a1
+3O4I5hDO715d8A2tqbxMCflFW0owg/D319xqfC9Grfg+K6yE71zMvtNS45AyRXBk77WpI5v4
+nUSfE2lbvUYgk3JHySIe28XxC3xIYYpPGQjxwa3GzPw0FN5aN6kerQQTHUBp29Dd+vLSgBaC
+2pAFrq059ZvN0ZPN11XG/2RuDY7HaTQu/QffhnY8rVlNxpFmbkVidwtZQahx5qIFu9Uww/tv
+o1AvhjaORi898/KiPtOqv7LpsPFbyNuMnZEG48cxtZuesMBJFP/bKtgU2DN69xiT8Pxf+N2n
+g0D2ximYzZqwY/4dBQj9dyQDuXRFo40hdqtWw0L96zV6723aQ8Xp0cqBaZj2wWTI4+6Ikry9
+zY0Mdm3bV8TYqsOa+zT4fnikGO0eYbTFHEiW9QUbl/UwzuERwk8p
+]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$SEQ_GG_REC" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[type        LOGMNR$SEQ_GG_REC as object
+(
+LOGMNR_UID NUMBER,
+OBJ# NUMBER,
+NAME VARCHAR2(384),
+OWNER# NUMBER,
+OWNERNAME VARCHAR2(384),
+FLAGS NUMBER,
+MD_TAB_SEQCACHE NUMBER,
+MD_TAB_SEQINCREMENTBY NUMBER,
+SPARE1  NUMBER,
+SPARE2  NUMBER,
+SPARE3  NUMBER,
+SPARE4  VARCHAR2(4000),
+SPARE5  VARCHAR2(4000),
+SPARE6  VARCHAR2(4000)
+);]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$SEQ_GG_RECS" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[TYPE        LOGMNR$SEQ_GG_RECS AS TABLE OF  SYSTEM.LOGMNR$SEQ_GG_REC;]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$SEQ_GG_TABF_PUBLIC" returnType="TABLE" type="FUNCTION">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[FUNCTION        LOGMNR$SEQ_GG_TABF_PUBLIC wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+249 181
+++dDv/cHZatK7/vHG9lvR8DQCpYwg/D3AEhqfHQC2h6ONoOvOeHvTNX1S5GDyajM4j8vkSVz
+IMw+LbYS3goujprvmrB/LUpdBF8TVvjEqZpC7MCKPXWcGnTeL7ja8C2tcOdjOpRXkwL5NmPJ
+B0KqMvwepdiQDY7HUDQrBddQC1lBqHGEogWkwRJ3+2+jUC+Gpo5GTazIWS0V551NkSl3+h0W
+BhkPglLbvQDPzxWTnmu4ZuJIlTiNwTf1R0WxghyyKFjES9CJsCrGT8Fn7prlF4Mr5kx1YBGf
+5xaODtRnmVJgb65RlKbAN9+Xxf2QnQjKQL99RZAgsEwGVKNfx9lFKwHLGUwzjOxmIAXXYd/Z
++L9osPQJjZYkNrD0pQ==
+]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$TAB_GG_REC" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[type        LOGMNR$TAB_GG_REC as object
+(
+LOGMNR_UID NUMBER,
+OBJ# NUMBER,
+BASEOBJV# NUMBER,
+MD_TAB_USERID NUMBER,                /* owner# */
+MD_TAB_COLCOUNT NUMBER,              /* user column count */
+MD_TAB_TOTAL_COL_NUM NUMBER,         /* kernal column count */
+MD_TAB_LOG_GROUP_EXISTS NUMBER,      /* Any log group exists for this table */
+MD_TAB_IOT VARCHAR2(3) ,             /* 'YES'/'NO' IS IOT? */
+MD_TAB_IOT_OVERFLOW VARCHAR2(3) ,    /* 'YES'/'NO' IOT with overflow ? */
+MD_TAB_PARTITION  VARCHAR2(3) ,      /* 'YES'/'NO' is partitioned ? */
+MD_TAB_SUBPARTITION VARCHAR2(3) ,    /* 'YES'/'NO' is sub partitioned? */
+MD_TAB_XMLTYPETABLE VARCHAR2(3) ,    /* 'YES'/'NO' is xmltype table? */
+MD_TAB_OBJECTID NUMBER,              /* object id if table object */
+MD_TAB_OWNER VARCHAR2(384),     /* owner name */
+MD_TAB_NAME VARCHAR2(384),      /* table name */
+MD_TAB_OBJTYPE VARCHAR2(384),   /* Object type name */
+MD_TAB_SCN NUMBER,                   /* COMMIT_SCN of this table version */
+TAB_FLAGS NUMBER,
+TRIGFLAG NUMBER,
+OBJ_FLAGS NUMBER,
+PROPERTY NUMBER,
+PARTTYPE NUMBER,
+SUBPARTTYPE NUMBER,
+SPARE1  NUMBER,
+SPARE2  NUMBER,
+SPARE3  NUMBER,
+SPARE4  VARCHAR2(4000),
+SPARE5  VARCHAR2(4000),
+SPARE6  VARCHAR2(4000),
+/* Following fields added in 12.1.0.2 */
+LVLCNT NUMBER,
+LVL1OBJ# NUMBER,
+LVL2OBJ# NUMBER,
+LVL1TYPE# NUMBER,
+LVL2TYPE# NUMBER,
+LVL1NAME  VARCHAR2(384),
+LVL2NAME  VARCHAR2(384),
+INTCOLS   NUMBER,
+ASSOC#    NUMBER,
+XIDUSN    NUMBER,
+XIDSLT    NUMBER,
+XIDSQN    NUMBER,
+DROP_SCN  NUMBER,
+FLAGS     NUMBER,
+LOGMNR_SPARE1   NUMBER,
+LOGMNR_SPARE2   NUMBER,
+LOGMNR_SPARE3   VARCHAR2(1000),
+LOGMNR_SPARE4   DATE,
+LOGMNR_SPARE5   NUMBER,
+LOGMNR_SPARE6   NUMBER,
+LOGMNR_SPARE7   NUMBER,
+LOGMNR_SPARE8   NUMBER,
+LOGMNR_SPARE9   NUMBER,
+UNSUPPORTEDCOLS  NUMBER,
+COMPLEXTYPECOLS  NUMBER,
+NTPARENTOBJNUM   NUMBER,
+NTPARENTOBJVERSION NUMBER,
+NTPARENTINTCOLNUM  NUMBER,
+LOGMNRTLOFLAGS    NUMBER,
+LOGMNRMCV VARCHAR2(30),
+/* Following fields added in 12.2 */
+ACDRFLAGS        NUMBER,                                    /* automatic CDR */
+ACDRTSOBJ#       NUMBER,                                    /* automatic CDR */
+ACDRROWTSINTCOL# NUMBER                                     /* automatic CDR */
+);]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$TAB_GG_RECS" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[TYPE        LOGMNR$TAB_GG_RECS AS TABLE OF  SYSTEM.LOGMNR$TAB_GG_REC;]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$TAB_GG_TABF_PUBLIC" returnType="TABLE" type="FUNCTION">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[FUNCTION        LOGMNR$TAB_GG_TABF_PUBLIC wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+22e 181
+PRVt0FiLRPgjIhZlCZcQhnOHXQ4wgzJp2UhGfHSKrQ843hKm3gKD9swoFAS4jVcW0CsSl7W1
+6banVWdjktOVM18XyRjY4ZM5eRdquSp0ZdfHl3KJPBYqPi9LXIwum30Qh7ymgO+zTKj+R1N2
+nSs/TPnknfYLwcUdAfBryDQGEIMisMuE9XT5ix3sudhHa5tLJRjsBIDKlqL7zk2CH0C1NRAZ
+XrP7WgavVdNS3Yikz88VupZG21hTuAGspJBgCagmNWIwi9pgCIWP3rxF4p+uMps/ABEg+MBP
+6Iykm62kO6hWhVHJXkfKF/jrQFjYBTTzatr1VTcOXt/AFuagDR7isNtb//lnXh8TXyAFWyCT
+ubv6GXL0aM0PP/t+DfSl
+]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$USER_GG_REC" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[TYPE        LOGMNR$USER_GG_REC AS OBJECT
+(
+LOGMNR_UID     NUMBER,
+USERNAME       VARCHAR2(384),
+USERID         NUMBER,
+LOGMNR_SPARE1  NUMBER,
+LOGMNR_SPARE2  NUMBER,
+LOGMNR_SPARE3  VARCHAR2(4000),
+LOGMNR_SPARE4  DATE
+);]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$USER_GG_RECS" type="TYPE">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[TYPE        LOGMNR$USER_GG_RECS AS TABLE OF  SYSTEM.LOGMNR$USER_GG_REC;]]></definition>
+      </routine>
+      <routine deterministic="false" name="SYSTEM.LOGMNR$USER_GG_TABF_PUBLIC" returnType="TABLE" type="FUNCTION">
+         <comment/>
+         <definition language="PL/SQL"><![CDATA[FUNCTION        LOGMNR$USER_GG_TABF_PUBLIC wrapped
+a000000
+1
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+abcd
+8
+272 191
+Vc+i+Mga8m7/BSlvXl0J+GmParYwg/D319wCfC8CTE6Ot30G8QRR0WzR8ohw8Z/y6DuL4pL5
+IDjZApnCaZgeKa1OTjLj2B2tOYZg2ZuOAPKrxo7DeBqtn0Ahw0tubS36jP4xc+d2eQebdJMD
+c/U0JxdiAl0qIPzsltBjeoGAEsxUk0aubCMJmysgc2d8ojil6ixQ37D7RA0HWMkh27QdOuXF
+vSwuufDunMMT8Hue9dvy4vRXj+PhuyylJSukStsxyIb234EahCXyrjDlnzbC91eoU7v5sb4D
+OvtDmggQCEViyhFXwspP9P0dOObin8JENsDJeFZYr/oVAgSHa97LRKvNZgd+f//XHlpEAOP4
+rNm5mF0wTCABbb7tc5c7uo09M+79i7en8g==
+]]></definition>
+      </routine>
+   </routines>
+</database>

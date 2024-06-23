@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PERSONAL Database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>PERSONAL</b> Database</a>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>Utility Tables</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Orphan Tables</h3>
+                        </div>
+                        <div class="box-body">
+                            <div id="grid" data-columns>
+                                <div class="item">
+                                    <img id="helpDegreeImg" src="diagrams/orphans/HELP.1degree.png" usemap="#HELP" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="tbl_vendedoresDegreeImg" src="diagrams/orphans/TBL_VENDEDORES.1degree.png" usemap="#TBL_VENDEDORES" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnr_shard_tsDegreeImg" src="diagrams/orphans/LOGMNR_SHARD_TS.1degree.png" usemap="#LOGMNR_SHARD_TS" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_dbname_uid_mapDegreeImg" src="diagrams/orphans/LOGMNRC_DBNAME_UID_MAP.1degree.png" usemap="#LOGMNRC_DBNAME_UID_MAP" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="tbl_produtosDegreeImg" src="diagrams/orphans/TBL_PRODUTOS.1degree.png" usemap="#TBL_PRODUTOS" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_concol_ggDegreeImg" src="diagrams/orphans/LOGMNRC_CONCOL_GG.1degree.png" usemap="#LOGMNRC_CONCOL_GG" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_indcol_ggDegreeImg" src="diagrams/orphans/LOGMNRC_INDCOL_GG.1degree.png" usemap="#LOGMNRC_INDCOL_GG" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_shard_tsDegreeImg" src="diagrams/orphans/LOGMNRC_SHARD_TS.1degree.png" usemap="#LOGMNRC_SHARD_TS" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_tsDegreeImg" src="diagrams/orphans/LOGMNRC_TS.1degree.png" usemap="#LOGMNRC_TS" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_tspartDegreeImg" src="diagrams/orphans/LOGMNRC_TSPART.1degree.png" usemap="#LOGMNRC_TSPART" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrp_ctas_part_mapDegreeImg" src="diagrams/orphans/LOGMNRP_CTAS_PART_MAP.1degree.png" usemap="#LOGMNRP_CTAS_PART_MAP" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="scheduler_job_args_tblDegreeImg" src="diagrams/orphans/SCHEDULER_JOB_ARGS_TBL.1degree.png" usemap="#SCHEDULER_JOB_ARGS_TBL" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="sqlplus_product_profileDegreeImg" src="diagrams/orphans/SQLPLUS_PRODUCT_PROFILE.1degree.png" usemap="#SQLPLUS_PRODUCT_PROFILE" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_gsiiDegreeImg" src="diagrams/orphans/LOGMNRC_GSII.1degree.png" usemap="#LOGMNRC_GSII" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="scheduler_program_args_tblDegreeImg" src="diagrams/orphans/SCHEDULER_PROGRAM_ARGS_TBL.1degree.png" usemap="#SCHEDULER_PROGRAM_ARGS_TBL" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnr_logmnr_buildlogDegreeImg" src="diagrams/orphans/LOGMNR_LOGMNR_BUILDLOG.1degree.png" usemap="#LOGMNR_LOGMNR_BUILDLOG" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="tbl_cadastro_clientesDegreeImg" src="diagrams/orphans/TBL_CADASTRO_CLIENTES.1degree.png" usemap="#TBL_CADASTRO_CLIENTES" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_gsbaDegreeImg" src="diagrams/orphans/LOGMNRC_GSBA.1degree.png" usemap="#LOGMNRC_GSBA" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_seq_ggDegreeImg" src="diagrams/orphans/LOGMNRC_SEQ_GG.1degree.png" usemap="#LOGMNRC_SEQ_GG" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_con_ggDegreeImg" src="diagrams/orphans/LOGMNRC_CON_GG.1degree.png" usemap="#LOGMNRC_CON_GG" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_ind_ggDegreeImg" src="diagrams/orphans/LOGMNRC_IND_GG.1degree.png" usemap="#LOGMNRC_IND_GG" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="redo_dbDegreeImg" src="diagrams/orphans/REDO_DB.1degree.png" usemap="#REDO_DB" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="redo_logDegreeImg" src="diagrams/orphans/REDO_LOG.1degree.png" usemap="#REDO_LOG" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_gtloDegreeImg" src="diagrams/orphans/LOGMNRC_GTLO.1degree.png" usemap="#LOGMNRC_GTLO" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrggc_gtloDegreeImg" src="diagrams/orphans/LOGMNRGGC_GTLO.1degree.png" usemap="#LOGMNRGGC_GTLO" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrc_gtcsDegreeImg" src="diagrams/orphans/LOGMNRC_GTCS.1degree.png" usemap="#LOGMNRC_GTCS" style="max-width:100%;" border="0" align="top">
+                                </div>
+                                <div class="item">
+                                    <img id="logmnrggc_gtcsDegreeImg" src="diagrams/orphans/LOGMNRGGC_GTCS.1degree.png" usemap="#LOGMNRGGC_GTCS" style="max-width:100%;" border="0" align="top">
+                                </div>
+                            </div>
+                            <map id="HELP" name="HELP">
+<area shape="rect" id="node1" href="tables/HELP.html" target="_top" title="HELP" alt="" coords="5,5,220,163">
+</map><map id="TBL_VENDEDORES" name="TBL_VENDEDORES">
+<area shape="rect" id="node1" href="tables/TBL_VENDEDORES.html" target="_top" title="TBL_VENDEDORES" alt="" coords="5,5,309,163">
+</map><map id="LOGMNR_SHARD_TS" name="LOGMNR_SHARD_TS">
+<area shape="rect" id="node1" href="tables/LOGMNR_SHARD_TS.html" target="_top" title="LOGMNR_SHARD_TS" alt="" coords="5,5,315,221">
+</map><map id="LOGMNRC_DBNAME_UID_MAP" name="LOGMNRC_DBNAME_UID_MAP">
+<area shape="rect" id="node1" href="tables/LOGMNRC_DBNAME_UID_MAP.html" target="_top" title="LOGMNRC_DBNAME_UID_MAP" alt="" coords="5,5,400,221">
+</map><map id="TBL_PRODUTOS" name="TBL_PRODUTOS">
+<area shape="rect" id="node1" href="tables/TBL_PRODUTOS.html" target="_top" title="TBL_PRODUTOS" alt="" coords="5,5,288,251">
+</map><map id="LOGMNRC_CONCOL_GG" name="LOGMNRC_CONCOL_GG">
+<area shape="rect" id="node1" href="tables/LOGMNRC_CONCOL_GG.html" target="_top" title="LOGMNRC_CONCOL_GG" alt="" coords="5,5,360,309">
+</map><map id="LOGMNRC_INDCOL_GG" name="LOGMNRC_INDCOL_GG">
+<area shape="rect" id="node1" href="tables/LOGMNRC_INDCOL_GG.html" target="_top" title="LOGMNRC_INDCOL_GG" alt="" coords="5,5,352,309">
+</map><map id="LOGMNRC_SHARD_TS" name="LOGMNRC_SHARD_TS">
+<area shape="rect" id="node1" href="tables/LOGMNRC_SHARD_TS.html" target="_top" title="LOGMNRC_SHARD_TS" alt="" coords="5,5,343,309">
+</map><map id="LOGMNRC_TS" name="LOGMNRC_TS">
+<area shape="rect" id="node1" href="tables/LOGMNRC_TS.html" target="_top" title="LOGMNRC_TS" alt="" coords="5,5,277,309">
+</map><map id="LOGMNRC_TSPART" name="LOGMNRC_TSPART">
+<area shape="rect" id="node1" href="tables/LOGMNRC_TSPART.html" target="_top" title="LOGMNRC_TSPART" alt="" coords="5,5,320,309">
+</map><map id="LOGMNRP_CTAS_PART_MAP" name="LOGMNRP_CTAS_PART_MAP">
+<area shape="rect" id="node1" href="tables/LOGMNRP_CTAS_PART_MAP.html" target="_top" title="LOGMNRP_CTAS_PART_MAP" alt="" coords="5,5,396,309">
+</map><map id="SCHEDULER_JOB_ARGS_TBL" name="SCHEDULER_JOB_ARGS_TBL">
+<area shape="rect" id="node1" href="tables/SCHEDULER_JOB_ARGS_TBL.html" target="_top" title="SCHEDULER_JOB_ARGS_TBL" alt="" coords="5,5,401,309">
+</map><map id="SQLPLUS_PRODUCT_PROFILE" name="SQLPLUS_PRODUCT_PROFILE">
+<area shape="rect" id="node1" href="tables/SQLPLUS_PRODUCT_PROFILE.html" target="_top" title="SQLPLUS_PRODUCT_PROFILE" alt="" coords="5,5,399,309">
+</map><map id="LOGMNRC_GSII" name="LOGMNRC_GSII">
+<area shape="rect" id="node1" href="tables/LOGMNRC_GSII.html" target="_top" title="LOGMNRC_GSII" alt="" coords="5,5,309,339">
+</map><map id="SCHEDULER_PROGRAM_ARGS_TBL" name="SCHEDULER_PROGRAM_ARGS_TBL">
+<area shape="rect" id="node1" href="tables/SCHEDULER_PROGRAM_ARGS_TBL.html" target="_top" title="SCHEDULER_PROGRAM_ARGS_TBL" alt="" coords="5,5,452,339">
+</map><map id="LOGMNR_LOGMNR_BUILDLOG" name="LOGMNR_LOGMNR_BUILDLOG">
+<area shape="rect" id="node1" href="tables/LOGMNR_LOGMNR_BUILDLOG.html" target="_top" title="LOGMNR_LOGMNR_BUILDLOG" alt="" coords="5,5,411,427">
+</map><map id="TBL_CADASTRO_CLIENTES" name="TBL_CADASTRO_CLIENTES">
+<area shape="rect" id="node1" href="tables/TBL_CADASTRO_CLIENTES.html" target="_top" title="TBL_CADASTRO_CLIENTES" alt="" coords="5,5,376,427">
+</map><map id="LOGMNRC_GSBA" name="LOGMNRC_GSBA">
+<area shape="rect" id="node1" href="tables/LOGMNRC_GSBA.html" target="_top" title="LOGMNRC_GSBA" alt="" coords="5,5,333,456">
+</map><map id="LOGMNRC_SEQ_GG" name="LOGMNRC_SEQ_GG">
+<area shape="rect" id="node1" href="tables/LOGMNRC_SEQ_GG.html" target="_top" title="LOGMNRC_SEQ_GG" alt="" coords="5,5,324,485">
+</map><map id="LOGMNRC_CON_GG" name="LOGMNRC_CON_GG">
+<area shape="rect" id="node1" href="tables/LOGMNRC_CON_GG.html" target="_top" title="LOGMNRC_CON_GG" alt="" coords="5,5,325,515">
+</map><map id="LOGMNRC_IND_GG" name="LOGMNRC_IND_GG">
+<area shape="rect" id="node1" href="tables/LOGMNRC_IND_GG.html" target="_top" title="LOGMNRC_IND_GG" alt="" coords="5,5,317,544">
+</map><map id="REDO_DB" name="REDO_DB">
+<area shape="rect" id="node1" href="tables/REDO_DB.html" target="_top" title="REDO_DB" alt="" coords="5,5,355,1512">
+</map><map id="REDO_LOG" name="REDO_LOG">
+<area shape="rect" id="node1" href="tables/REDO_LOG.html" target="_top" title="REDO_LOG" alt="" coords="5,5,355,1571">
+</map><map id="LOGMNRC_GTLO" name="LOGMNRC_GTLO">
+<area shape="rect" id="node1" href="tables/LOGMNRC_GTLO.html" target="_top" title="LOGMNRC_GTLO" alt="" coords="5,5,357,1600">
+</map><map id="LOGMNRGGC_GTLO" name="LOGMNRGGC_GTLO">
+<area shape="rect" id="node1" href="tables/LOGMNRGGC_GTLO.html" target="_top" title="LOGMNRGGC_GTLO" alt="" coords="5,5,357,1600">
+</map><map id="LOGMNRC_GTCS" name="LOGMNRC_GTCS">
+<area shape="rect" id="node1" href="tables/LOGMNRC_GTCS.html" target="_top" title="LOGMNRC_GTCS" alt="" coords="5,5,427,1659">
+</map><map id="LOGMNRGGC_GTCS" name="LOGMNRGGC_GTCS">
+<area shape="rect" id="node1" href="tables/LOGMNRGGC_GTCS.html" target="_top" title="LOGMNRGGC_GTCS" alt="" coords="5,5,427,1659">
+</map>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.1.0</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src=""></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>
